@@ -1,0 +1,55 @@
+.t-e-bold {
+	@include use-font($Mulish, 800);
+}
+
+.t-bold {
+	@include use-font($Mulish, 700);
+}
+
+.t-s-bold {
+	@include use-font($Mulish, 600);
+}
+
+.t-medium {
+	@include use-font($Mulish, 500);
+}
+
+.t-relative {
+	@include use-font($Mulish, 400);
+	font-style: italic;
+}
+
+.t-1 {
+	@include use-size(72px, normal);
+	@media screen and (max-width: 998px) {
+		font-size: 42px;
+	}
+}
+
+.t-2 {
+	@include use-size(42px, normal);
+}
+
+.t-3 {
+	@include use-size(28px, normal);
+}
+
+.t-4 {
+	@include use-size(22px, normal);
+}
+
+.t-5 {
+	@include use-size(20px, normal);
+}
+
+.t-6 {
+	@include use-size(18px, normal);
+}
+
+.t-7 {
+	@include use-size(16px, normal);
+}
+
+.t-8 {
+	@include use-size(14px, normal);
+}

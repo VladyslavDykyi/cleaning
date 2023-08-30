@@ -1,0 +1,66 @@
+@import '../default/_my__color';
+
+.header {
+	display: flex;
+	align-items: center;
+	&-bg {
+		background-color: $white;
+		padding: 14px 0 13px;
+	}
+	&-logo {
+		margin-right: 27px;
+	}
+	&-social {
+		display: flex;
+		align-items: center;
+		background-color: $pink-light;
+		border-radius: 14px;
+		padding: 20px 8px;
+		color: $white;
+		&-geo {
+			margin-right: 20px;
+			& span {
+				margin-left: 8px;
+			}
+		}
+		& > a {
+			text-decoration: none;
+			display: block;
+			border-radius: 50%;
+			color: $white;
+			margin-right: 8px;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+	&-list {
+		display: flex;
+		align-items: baseline;
+		list-style-type: none;
+		grid-gap: 22px;
+		padding-left: 0;
+		margin-bottom: 0;
+		margin-left: auto;
+		&-item {
+			& > a {
+				text-decoration: none;
+				color: $black;
+				text-align: center;
+				font-size: 16px;
+				font-weight: 500;
+				line-height: normal;
+				display: flex;
+				flex-direction: column;
+				grid-gap: 7px;
+				border-radius: 2px;
+				&:hover {
+					color: $bright-green;
+				}
+				&:active {
+					color: $dark-green;
+				}
+			}
+		}
+	}
+}
