@@ -8,4 +8,26 @@
 			document.querySelector('body').classList.toggle('lock');
 		}
 	});
+	document.addEventListener("DOMContentLoaded", function () {
+		const cityElement = document.getElementById("visitor-city");
+		// Виконуємо запит до API ipinfo.io за допомогою Fetch
+		fetch("https://ipinfo.io/178.136.177.48?token=fa07843fb38f4c")
+			.then(function (response) {
+				if (!response.ok) {
+					throw new Error("Помилка під час запиту до API ipinfo.io");
+				}
+				return response.json();
+			})
+			.then(function (data) {
+				// Вилучаємо інформацію про місто
+
+				const city = data.city;
+				// Вставляємо місто в HTML
+				cityElement.textContent = city;
+			})
+			.catch(function (error) {
+				console.error(error);
+				cityElement.textContent = "EROR";
+			});
+	});
 })();

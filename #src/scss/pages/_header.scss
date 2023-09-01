@@ -1,5 +1,16 @@
 @import '../default/_my__color';
-
+@media (min-width: 1400px){
+	.container-xxxl{
+		max-width: 1440px;
+		--bs-gutter-x: 1.5rem;
+		--bs-gutter-y: 0;
+		width: 100%;
+		padding-right: calc(var(--bs-gutter-x) * .5);
+		padding-left: calc(var(--bs-gutter-x) * .5);
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
 .header {
 	display: flex;
 	align-items: center;
@@ -100,14 +111,14 @@
 		border-radius: 14px;
 		padding: 20px 8px;
 		color: $white;
-		width: 389px;
+		width: 420px;
 		@media screen and (max-width: 1210px) {
-			width: 315px;
+			width: 346px;
 			padding: 20px 6px;
 		}
 		@media screen and (max-width: 1024px) {
 			width: 100%;
-			max-width: 345px;
+			max-width: 376px;
 			margin: 0 auto;
 			padding: 8px 10px;
 		}
@@ -120,6 +131,7 @@
 		}
 		&-geo {
 			margin-right: 20px;
+			display: flex;
 			@media screen and (max-width: 1210px) {
 				margin-right: 6px;
 			}
@@ -165,6 +177,7 @@
 			}
 			&:last-child {
 				margin-right: 0;
+				white-space: nowrap;
 				@media screen and (max-width: 425px) {
 					flex: 0 1 100%;
 				}
@@ -176,12 +189,12 @@
 		align-items: baseline;
 		justify-content: space-between;
 		list-style-type: none;
-		width: calc(100% - 415px);
+		width: calc(100% - 446px);
 		grid-gap: 6px;
 		padding-left: 0;
 		margin-bottom: 0;
 		@media screen and (max-width: 1210px) {
-			width: calc(100% - 327px);
+			width: calc(100% - 358px);
 		}
 		@media screen and (max-width: 1024px) {
 			flex-direction: column;
