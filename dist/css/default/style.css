@@ -285,3 +285,17 @@ button {
     font-size: 42px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .t-1 {
+    font-size: 28px;
+  }
+
+  .t-2 {
+    font-size: 24px;
+  }
+
+  .t-3 {
+    font-size: 22px;
+  }
+}

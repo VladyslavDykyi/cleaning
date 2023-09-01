@@ -6,4 +6,34 @@ body {
 	line-height: normal;
 	color: $black;
 	background-color: $white;
+	@media screen and (max-width: 768px) {
+		font-size: 14px;
+	}
+	&.lock {
+		overflow: hidden;
+	}
+}
+.btn {
+	--bs-btn-border-radius: 10px;
+}
+.btn-pink {
+	background-color: $pink-light;
+	color: $white;
+	--bs-btn-font-size: 18px;
+	--bs-btn-font-weight: 500;
+	--bs-btn-line-height: normal;
+	&:hover {
+		background-color: #ff9dc9;
+		color: $white;
+	}
+	&:active {
+		--bs-btn-active-bg: #fdb7d6;
+		--bs-btn-active-color: #FEFEFE;
+		--bs-btn-active-border-color: transparent;
+	}
+}
+.reset-btn {
+	border: none;
+	background-color: transparent;
+	padding: 0;
 }

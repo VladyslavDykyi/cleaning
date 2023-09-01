@@ -24,14 +24,23 @@
 	@media screen and (max-width: 998px) {
 		font-size: 42px;
 	}
+	@media screen and (max-width: 768px) {
+		font-size: 28px;
+	}
 }
 
 .t-2 {
 	@include use-size(42px, normal);
+	@media screen and (max-width: 768px) {
+		font-size: 24px;
+	}
 }
 
 .t-3 {
 	@include use-size(28px, normal);
+	@media screen and (max-width: 768px) {
+		font-size: 22px;
+	}
 }
 
 .t-4 {

@@ -3,12 +3,95 @@
 .header {
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
+	@media screen and (max-width: 1024px) {
+		flex-wrap: wrap;
+		grid-gap: 20px;
+		padding-right: 0;
+	}
+	&.active {
+		height: 100vh;
+		align-items: center;
+		align-content: flex-start;
+		overflow-x: hidden;
+		overflow-y: auto;
+		padding-bottom: 90px;
+		padding-right: 16px;
+		&::-webkit-scrollbar {
+			border-radius: 3px;
+			width: 7px;
+			height: 8px;
+		}
+		&::-webkit-scrollbar-thumb {
+			border-radius: 3px;
+			height: 8px;
+			background-color: #FE308B;
+		}
+		& .header-mob {
+			display: flex;
+			flex-direction: column;
+		}
+
+		& .close-icon {
+			display: block;
+		}
+		& .burger-icon {
+			display: none;
+			@media screen and (max-width: 1024px) {
+				display: none;
+			}
+		}
+	}
+	& .burger {
+		display: none;
+		@media screen and (max-width: 1024px) {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+	& .close-icon {
+		display: none;
+	}
 	&-bg {
 		background-color: $white;
 		padding: 14px 0 13px;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 1000;
+		width: 100%;
 	}
 	&-logo {
-		margin-right: 27px;
+		margin-right: 26px;
+		@media screen and (max-width: 1210px) {
+			margin-right: 12px;
+		}
+		& img {
+			width: 144px;
+			height: auto;
+			@media screen and (max-width: 1210px) {
+				width: 114px;
+			}
+		}
+	}
+	&-mob {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		grid-gap: 26px;
+		width: calc(100% - 170px);
+		max-width: 1126px;
+		@media screen and (max-width: 1210px) {
+			width: calc(100% - 126px);
+			grid-gap: 12px;
+		}
+		@media screen and (max-width: 1024px) {
+			display: none;
+			width: 100%;
+			max-width: 100%;
+			align-items: flex-start;
+		}
 	}
 	&-social {
 		display: flex;
@@ -17,10 +100,49 @@
 		border-radius: 14px;
 		padding: 20px 8px;
 		color: $white;
+		width: 389px;
+		@media screen and (max-width: 1210px) {
+			width: 315px;
+			padding: 20px 6px;
+		}
+		@media screen and (max-width: 1024px) {
+			width: 100%;
+			max-width: 345px;
+			margin: 0 auto;
+			padding: 8px 10px;
+		}
+		@media screen and (max-width: 425px) {
+			max-width: 100%;
+			margin: 0;
+			flex-wrap: wrap;
+			justify-content: center;
+			grid-gap: 18px 0;
+		}
 		&-geo {
 			margin-right: 20px;
+			@media screen and (max-width: 1210px) {
+				margin-right: 6px;
+			}
+			@media screen and (max-width: 1024px) {
+				margin-right: 20px;
+			}
+			@media screen and (max-width: 425px) {
+				flex: 0 1 100%;
+				text-align: center;
+				font-size: 20px;
+			}
 			& span {
 				margin-left: 8px;
+				@media screen and (max-width: 1210px) {
+					margin-left: 6px;
+					font-size: 14px;
+				}
+				@media screen and (max-width: 1024px) {
+					font-size: 12px;
+				}
+				@media screen and (max-width: 425px) {
+					font-size: 20px;
+				}
 			}
 		}
 		& > a {
@@ -29,19 +151,42 @@
 			border-radius: 50%;
 			color: $white;
 			margin-right: 8px;
+			@media screen and (max-width: 1210px) {
+				font-size: 14px;
+				margin-right: 6px;
+			}
+			@media screen and (max-width: 1024px) {
+				font-size: 12px;
+			}
+			@media screen and (max-width: 425px) {
+				flex: 0 1 calc(33.3333% - 6px);
+				text-align: center;
+				font-size: 20px;
+			}
 			&:last-child {
 				margin-right: 0;
+				@media screen and (max-width: 425px) {
+					flex: 0 1 100%;
+				}
 			}
 		}
 	}
 	&-list {
 		display: flex;
 		align-items: baseline;
+		justify-content: space-between;
 		list-style-type: none;
-		grid-gap: 22px;
+		width: calc(100% - 415px);
+		grid-gap: 6px;
 		padding-left: 0;
 		margin-bottom: 0;
-		margin-left: auto;
+		@media screen and (max-width: 1210px) {
+			width: calc(100% - 327px);
+		}
+		@media screen and (max-width: 1024px) {
+			flex-direction: column;
+			grid-gap: 20px;
+		}
 		&-item {
 			& > a {
 				text-decoration: none;
@@ -54,6 +199,16 @@
 				flex-direction: column;
 				grid-gap: 7px;
 				border-radius: 2px;
+				@media screen and (max-width: 1210px) {
+					font-size: 14px;
+				}
+				@media screen and (max-width: 1024px) {
+					flex-direction: row;
+					grid-gap: 8px;
+					text-align: left;
+					align-items: center;
+					font-size: 16px;
+				}
 				&:hover {
 					color: $bright-green;
 				}
