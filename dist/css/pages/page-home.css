@@ -636,12 +636,10 @@ body.lock {
   list-style-type: none;
   padding-left: 0;
   margin-bottom: 0;
-  width: -webkit-calc(100% - 140px);
-  width: calc(100% - 140px);
 }
 
 .works-reviews-list-item {
-  padding: 0 30px;
+  padding: 0 60px;
 }
 
 .works-reviews-list-item > h5 {
@@ -673,6 +671,19 @@ body.lock {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.container-xxxl {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 12px;
+}
+
+@media screen and (max-width: 1440px) {
+  .works-reviews-list-item {
+    padding: 0 30px;
+  }
 }
 
 @media screen and (max-width: 1240px) {
@@ -906,6 +917,12 @@ body.lock {
 
   .our-model-list-item > p {
     font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .works-reviews-list-item {
+    padding: 0 15px;
   }
 }
 

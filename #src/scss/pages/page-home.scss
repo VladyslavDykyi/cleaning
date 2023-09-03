@@ -317,9 +317,14 @@
 		list-style-type: none;
 		padding-left: 0;
 		margin-bottom: 0;
-		width: calc(100% - 140px);
 		&-item {
-			padding: 0 30px;
+			padding: 0 60px;
+			@media screen and (max-width: 1440px) {
+				padding: 0 30px;
+			}
+			@media screen and (max-width: 640px) {
+				padding: 0 15px;
+			}
 			& >h3 {
 
 			}
@@ -345,4 +350,10 @@
 			}
 		}
 	}
+}
+.container-xxxl {
+	max-width: 1440px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 12px;
 }
