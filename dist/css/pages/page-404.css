@@ -40,6 +40,10 @@ body.lock {
   padding: 0;
 }
 
+:root {
+  --swiper-theme-color: #83B100;
+}
+
 .container-xxxl {
   max-width: 1440px;
   --bs-gutter-x: 1.5rem;

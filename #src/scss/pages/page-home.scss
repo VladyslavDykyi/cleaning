@@ -284,3 +284,65 @@
 		}
 	}
 }
+.works-reviews {
+	padding-bottom: 100px;
+	@media screen and (max-width: 580px) {
+		padding-bottom: 50px;
+	}
+	& > h2 {
+		margin-bottom: 42px;
+		color: $accent;
+		@media screen and (max-width: 580px) {
+			margin-bottom: 24px;
+		}
+	}
+	& .swiper-button-next, .swiper-rtl .swiper-button-prev {
+		right: var(--swiper-navigation-sides-offset,0px);
+		background-color: #DCE9C4;
+		border-radius: 50px;
+		width: 40px;
+		height: 40px;
+	}
+	& .swiper-button-prev, .swiper-rtl .swiper-button-next {
+		left: var(--swiper-navigation-sides-offset,0px);
+		background-color: #DCE9C4;
+		border-radius: 50px;
+		width: 40px;
+		height: 40px;
+	}
+	& .swiper-button-next:after, .swiper-button-prev:after {
+		font-size: 26px;
+	}
+	&-list {
+		list-style-type: none;
+		padding-left: 0;
+		margin-bottom: 0;
+		width: calc(100% - 140px);
+		&-item {
+			padding: 0 30px;
+			& >h3 {
+
+			}
+			& >h5 {
+				color: $pink;
+			}
+			& > p {
+				line-height: 140%;
+			}
+		}
+	}
+	&-img {
+		display: flex;
+		grid-gap: 2px;
+		margin-bottom: 20px;
+		& picture {
+			flex: 0 1 calc(50% - 1px);
+			display: block;
+			& img {
+				display: block;
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+}
