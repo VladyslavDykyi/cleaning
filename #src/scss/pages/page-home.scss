@@ -11,11 +11,11 @@
 	display: flex;
 	padding: 140px 0 100px;
 	@media screen and (max-width: 1024px) {
-		padding: 105px 0 100px;
+		padding: 168px 0 100px;
 	}
 	@media screen and (max-width: 580px) {
 		flex-direction: column;
-		padding: 90px 0 50px;
+		padding: 168px 0 50px;
 	}
 	&-info {
 		width: 50%;
