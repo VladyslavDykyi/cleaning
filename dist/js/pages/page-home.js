@@ -10,7 +10,7 @@
 	});
 	document.addEventListener("DOMContentLoaded", function () {
 		const cityElement = document.querySelectorAll(".visitor-city");
-		// Виконуємо запит до API ipinfo.io за допомогою Fetch
+		// Виконуємо запит до API ipapi.co за допомогою Fetch
 		fetch("https://ipapi.co/json/")
 			.then(function (response) {
 				if (!response.ok) {
