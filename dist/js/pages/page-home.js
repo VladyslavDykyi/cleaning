@@ -9,7 +9,7 @@
 		}
 	});
 	document.addEventListener("DOMContentLoaded", function () {
-		const cityElement = document.getElementById("visitor-city");
+		const cityElement = document.querySelectorAll(".visitor-city");
 		// Виконуємо запит до API ipinfo.io за допомогою Fetch
 		fetch("https://ipinfo.io/178.136.177.48?token=fa07843fb38f4c")
 			.then(function (response) {
@@ -23,11 +23,15 @@
 
 				const city = data.city;
 				// Вставляємо місто в HTML
-				cityElement.textContent = city;
+				cityElement.forEach(item => {
+					item.textContent = city;
+				});
 			})
 			.catch(function (error) {
 				console.error(error);
-				cityElement.textContent = "EROR";
+				cityElement.forEach(item => {
+					item.textContent = "EROR";
+				});
 			});
 	});
 	const swiper = new Swiper(".mySwiper1", {
@@ -43,6 +47,28 @@
 			},
 			1024: {
 				slidesPerView: 3,
+			},
+		},
+	});
+	const swiper2 = new Swiper(".mySwiper2", {
+		slidesPerView: 2,
+		centeredSlidesBounds: true,
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+		breakpoints: {
+			640: {
+				slidesPerView: 3,
+			},
+			840: {
+				slidesPerView: 4,
+			},
+			1050: {
+				slidesPerView: 5,
+			},
+			1235: {
+				slidesPerView: 6,
 			},
 		},
 	});

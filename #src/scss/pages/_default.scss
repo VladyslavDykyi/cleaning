@@ -40,3 +40,68 @@ body {
 :root {
 	--swiper-theme-color: #83B100;
 }
+.social {
+	display: flex;
+	align-items: center;
+	background-color: $pink-light;
+	border-radius: 14px;
+	padding: 20px 8px;
+	color: $white;
+	width: 420px;
+	margin-right: 16px;
+	@media screen and (max-width: 1210px) {
+		width: 346px;
+		padding: 20px 6px;
+		margin-right: 6px;
+	}
+	@media screen and (max-width: 1024px) {
+		width: 100%;
+		max-width: 376px;
+		margin: 0 auto;
+		padding: 8px 10px;
+	}
+	@media screen and (max-width: 425px) {
+		max-width: 100%;
+	}
+	&-geo {
+		margin-right: 20px;
+		display: flex;
+		@media screen and (max-width: 1210px) {
+			margin-right: 6px;
+		}
+		& span {
+			margin-left: 8px;
+			@media screen and (max-width: 1210px) {
+				margin-left: 6px;
+				font-size: 14px;
+			}
+			@media screen and (max-width: 425px) {
+				font-size: 11px;
+			}
+		}
+	}
+	& > a {
+		text-decoration: none;
+		display: block;
+		border-radius: 50%;
+		color: $white;
+		margin-right: 8px;
+		@media screen and (max-width: 1210px) {
+			font-size: 14px;
+			margin-right: 6px;
+		}
+		@media screen and (max-width: 425px) {
+			font-size: 11px;
+		}
+		&:last-child {
+			margin-right: 0;
+			white-space: nowrap;
+		}
+		& svg {
+			@media screen and (max-width: 425px) {
+				width: 24px;
+				height: 24px;
+			}
+		}
+	}
+}
