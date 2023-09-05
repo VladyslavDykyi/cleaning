@@ -536,7 +536,7 @@ body.lock {
             align-items: flex-start;
   }
 
-  .footer-bottom > .footer-list {
+  .footer-bottom > .footer-list:first-child {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
@@ -547,6 +547,13 @@ body.lock {
         -ms-flex-align: start;
             align-items: flex-start;
     grid-gap: 20px;
+  }
+
+  .footer-bottom > .footer-list:last-child {
+    -webkit-box-pack: space-evenly;
+    -webkit-justify-content: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
   }
 }
 
