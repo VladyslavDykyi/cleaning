@@ -11,7 +11,7 @@
 	document.addEventListener("DOMContentLoaded", function () {
 		const cityElement = document.querySelectorAll(".visitor-city");
 		// Виконуємо запит до API ipinfo.io за допомогою Fetch
-		fetch("https://ipinfo.io/178.136.177.48?token=fa07843fb38f4c")
+		fetch("https://ipapi.co/json/")
 			.then(function (response) {
 				if (!response.ok) {
 					throw new Error("Помилка під час запиту до API ipinfo.io");
