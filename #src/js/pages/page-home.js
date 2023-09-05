@@ -72,4 +72,11 @@
 			},
 		},
 	});
+
+	const list = document.querySelector('.service-packages-list');
+	list.addEventListener('click',e => {
+		if (!e.target.classList.contains('text-wrap')) return
+		const item = e.target.closest('.service-packages-list-item').classList.toggle('active');
+		console.log(item);
+	});
 })();
