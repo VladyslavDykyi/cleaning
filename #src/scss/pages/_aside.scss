@@ -1,0 +1,45 @@
+@import '../default/_my__color';
+@import '../default/_my__font';
+@import '../default/_mixins';
+
+.aside {
+	position: sticky;
+	top: 118px;
+	padding: 20px 16px;
+	border-radius: 20px;
+	box-shadow: 0 0 10px 1px #E5E5E5;
+	&-title {
+		margin-bottom: 12px;
+		&:last-of-type {
+			margin-top: 20px;
+			margin-bottom: 8px;
+		}
+	}
+	&-wrapper {
+		margin-bottom: 10px;
+	}
+	& .btn {
+		margin: 24px 24px 0;
+		width: calc(100% - 48px);
+		--bs-btn-padding-x: 1.4375rem;
+		--bs-btn-padding-y: 0.875rem;
+	}
+	& .bi {
+		color: $pink;
+	}
+	&-list {
+		margin-bottom: 16px;
+		&-item {
+			margin-bottom: 8px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+	&-prise {
+		color:$accent;
+	}
+	&-min-price {
+		color: $red;
+	}
+}

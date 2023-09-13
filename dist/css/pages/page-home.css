@@ -351,8 +351,20 @@ body.lock {
   overflow: hidden;
 }
 
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0;
+  /* <-- Apparently some margin are still there even though it's hidden */
+}
+
 .btn {
   --bs-btn-border-radius: 10px;
+}
+
+li::marker {
+  color: #454545;
 }
 
 .btn-pink {
@@ -426,6 +438,725 @@ body.lock {
 .social > a:last-child {
   margin-right: 0;
   white-space: nowrap;
+}
+
+.my-checkbox [type="checkbox"] {
+  display: none;
+}
+
+.my-checkbox [type="checkbox"]:checked + span:after {
+  display: block;
+}
+
+.my-checkbox span {
+  padding-left: 32px;
+  position: relative;
+  display: block;
+}
+
+.my-checkbox span:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 24px;
+  height: 24px;
+  display: block;
+  border: 2px solid #83B100;
+  -webkit-border-radius: 3px;
+          border-radius: 3px;
+  cursor: pointer;
+}
+
+.my-checkbox span:after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 4px;
+  z-index: 10;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='12' viewBox='0 0 16 12' fill='none'%3e%3cpath d='M14.1622 0.310122C14.5826 -0.103374 15.2642 -0.103374 15.6847 0.310122C16.1 0.718547 16.105 1.37762 15.7 1.7922L7.09854 11.6608C7.09027 11.671 7.08143 11.6807 7.07207 11.6899C6.65164 12.1034 5.96999 12.1034 5.54956 11.6899L0.315322 6.54195C-0.105107 6.12846 -0.105107 5.45805 0.315322 5.04455C0.735751 4.63105 1.4174 4.63105 1.83783 5.04455L6.27838 9.41187L14.1336 0.341795C14.1425 0.330685 14.152 0.320108 14.1622 0.310122Z' fill='%2383B100'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 12px;
+  display: none;
+  cursor: pointer;
+}
+
+.my-checkbox span > a {
+  color: #597B00;
+}
+
+.aside {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 118px;
+  padding: 20px 16px;
+  -webkit-border-radius: 20px;
+          border-radius: 20px;
+  -webkit-box-shadow: 0 0 10px 1px #E5E5E5;
+          box-shadow: 0 0 10px 1px #E5E5E5;
+}
+
+.aside-title {
+  margin-bottom: 12px;
+}
+
+.aside-title:last-of-type {
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+.aside-wrapper {
+  margin-bottom: 10px;
+}
+
+.aside .btn {
+  margin: 24px 24px 0;
+  width: -webkit-calc(100% - 48px);
+  width: calc(100% - 48px);
+  --bs-btn-padding-x: 1.4375rem;
+  --bs-btn-padding-y: 0.875rem;
+}
+
+.aside .bi {
+  color: #FE308B;
+}
+
+.aside-list {
+  margin-bottom: 16px;
+}
+
+.aside-list-item {
+  margin-bottom: 8px;
+}
+
+.aside-list-item:last-child {
+  margin-bottom: 0;
+}
+
+.aside-prise {
+  color: #83B100;
+}
+
+.aside-min-price {
+  color: #E83034;
+}
+
+.calculator-wrapper {
+  margin-bottom: 42px;
+}
+
+.calculator-wrapper > h2 {
+  margin-bottom: 24px;
+}
+
+.calculator-wrapper > h3 {
+  color: #597B00;
+  margin-top: -16px;
+  margin-bottom: 24px;
+  padding-left: 33px;
+}
+
+.calculator-wrapper > div {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.calculator-wrapper .counter-wrapper {
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-gap: 24px;
+}
+
+.calculator-wrapper .counter-wrapper p {
+  margin-bottom: 0;
+}
+
+.calculator-wrapper .rooms > label {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 208px;
+      -ms-flex: 0 1 208px;
+          flex: 0 1 208px;
+}
+
+.calculator-wrapper .numberBathRooms,
+.calculator-wrapper .numberRooms {
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  grid-gap: 12px;
+}
+
+.calculator-wrapper .numberBathRooms > label,
+.calculator-wrapper .numberRooms > label {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 81px;
+      -ms-flex: 0 1 81px;
+          flex: 0 1 81px;
+}
+
+.calculator-wrapper .numberBathRooms > .input,
+.calculator-wrapper .numberRooms > .input {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 306px;
+      -ms-flex: 0 1 306px;
+          flex: 0 1 306px;
+}
+
+.calculator-wrapper .total-square-footage {
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  grid-gap: 12px;
+}
+
+.calculator-wrapper .total-square-footage-range {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 -webkit-calc(100% - 318px);
+      -ms-flex: 0 1 calc(100% - 318px);
+          flex: 0 1 calc(100% - 318px);
+}
+
+.calculator-wrapper .total-square-footage > .input {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 306px;
+      -ms-flex: 0 1 306px;
+          flex: 0 1 306px;
+}
+
+.calculator-wrapper .additional-services {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  grid-gap: 16px;
+  padding-bottom: 0;
+}
+
+.calculator-wrapper .additional-services > div > [type="checkbox"] {
+  display: none;
+}
+
+.calculator-wrapper .additional-services.widthX2 > .additional-services-item {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 -webkit-calc(33.33334% - 13.33333px);
+      -ms-flex: 0 1 calc(33.33334% - 13.33333px);
+          flex: 0 1 calc(33.33334% - 13.33333px);
+}
+
+.calculator-wrapper .additional-services > .additional-services-item {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 -webkit-calc(16.66667% - 13.33333px);
+      -ms-flex: 0 1 calc(16.66667% - 13.33333px);
+          flex: 0 1 calc(16.66667% - 13.33333px);
+}
+
+.calculator-wrapper .additional-services > .additional-services-item.active {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 -webkit-calc(33.33334% - 13.33333px);
+      -ms-flex: 0 1 calc(33.33334% - 13.33333px);
+          flex: 0 1 calc(33.33334% - 13.33333px);
+}
+
+.calculator-wrapper .additional-services > .additional-services-item > [type="checkbox"]:checked + .services {
+  border: 1px solid #83B100;
+  background-color: #FEFEFE;
+  -webkit-box-shadow: 0 0 10px 1px #EFEFEF;
+          box-shadow: 0 0 10px 1px #EFEFEF;
+}
+
+.calculator-wrapper .additional-services > .additional-services-item > [type="checkbox"]:checked + .services > .services-input {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.calculator-wrapper .address {
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  grid-gap: 24px;
+}
+
+.calculator-wrapper .address > .input {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 -webkit-calc(25% - 18px);
+      -ms-flex: 0 1 calc(25% - 18px);
+          flex: 0 1 calc(25% - 18px);
+}
+
+.calculator-wrapper .address > .input:first-child {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 -webkit-calc(50% - 12px);
+      -ms-flex: 0 1 calc(50% - 12px);
+          flex: 0 1 calc(50% - 12px);
+}
+
+.calculator-wrapper .contact-data {
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  grid-gap: 24px;
+}
+
+.calculator-wrapper .contact-data > .input {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 -webkit-calc(33.3333% - 16px);
+      -ms-flex: 0 1 calc(33.3333% - 16px);
+          flex: 0 1 calc(33.3333% - 16px);
+}
+
+.calculator-wrapper .contact-data > .textarea {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 -webkit-calc(50% - 16px);
+      -ms-flex: 0 1 calc(50% - 16px);
+          flex: 0 1 calc(50% - 16px);
+}
+
+.calculator-wrapper .contact-data > .contact-text {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 -webkit-calc(50% - 16px);
+      -ms-flex: 0 1 calc(50% - 16px);
+          flex: 0 1 calc(50% - 16px);
+  line-height: 140%;
+}
+
+.radio [type="radio"] {
+  display: none;
+}
+
+.radio [type="radio"]:checked + span:after {
+  display: block;
+}
+
+.radio span {
+  position: relative;
+  display: block;
+  padding-left: 36px;
+}
+
+.radio span:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 24px;
+  height: 24px;
+  display: block;
+  border: 2px solid #83B100;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  cursor: pointer;
+}
+
+.radio span:after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  z-index: 10;
+  width: 16px;
+  height: 16px;
+  background-color: #83B100;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  display: none;
+  cursor: pointer;
+}
+
+.radio-text {
+  display: block;
+}
+
+.radio-text > [type="radio"] {
+  display: none;
+}
+
+.radio-text > [type="radio"]:checked + span {
+  color: #FEFEFE;
+  background-color: #83B100;
+  -webkit-box-shadow: 0 4px 4px 0 #769F00 inset;
+          box-shadow: 0 4px 4px 0 #769F00 inset;
+}
+
+.radio-text > [type="radio"]:checked + span:hover {
+  color: #FEFEFE;
+  background-color: #83B100;
+  -webkit-box-shadow: 0 4px 4px 0 #769F00 inset;
+          box-shadow: 0 4px 4px 0 #769F00 inset;
+}
+
+.radio-text > [type="radio"]:checked + span:active {
+  color: #FEFEFE;
+  background-color: #83B100;
+  -webkit-box-shadow: 0 4px 4px 0 #769F00 inset;
+          box-shadow: 0 4px 4px 0 #769F00 inset;
+}
+
+.radio-text > span {
+  padding: 6px;
+  width: 100%;
+  max-width: 208px;
+  height: 57px;
+  -webkit-border-radius: 16px;
+          border-radius: 16px;
+  border: 1px solid #83B100;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.radio-text > span:hover {
+  background-color: #83B100;
+  color: #FEFEFE;
+}
+
+.radio-text > span:active {
+  background-color: #597B00;
+  color: #FEFEFE;
+}
+
+.counter {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  grid-gap: 12px;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.counter > button {
+  -webkit-border-radius: 16px;
+          border-radius: 16px;
+  height: 57px;
+  width: 81px;
+  border: 1px solid #83B100;
+  background-color: #EDF5DE;
+}
+
+.counter > button:hover {
+  background-color: #83B100;
+}
+
+.counter > button:hover path {
+  fill: #FEFEFE;
+}
+
+.counter > button:active {
+  background-color: #597B00;
+}
+
+.counter > button:active path {
+  fill: #FEFEFE;
+}
+
+.counter label input {
+  -webkit-border-radius: 16px;
+          border-radius: 16px;
+  height: 57px;
+  width: 81px;
+  display: block;
+  text-align: center;
+  border: 1px solid #83B100;
+}
+
+.input > input {
+  width: 100%;
+  height: 57px;
+  -webkit-border-radius: 16px;
+          border-radius: 16px;
+  border: 1px solid #83B100;
+  background-color: #FBFFF3;
+  outline: none;
+  padding-left: 16px;
+}
+
+.input > input::-webkit-input-placeholder {
+  color: #454545;
+  font-size: 16px;
+}
+
+.input > input::-moz-placeholder {
+  color: #454545;
+  font-size: 16px;
+}
+
+.input > input:-ms-input-placeholder {
+  color: #454545;
+  font-size: 16px;
+}
+
+.input > input::-ms-input-placeholder {
+  color: #454545;
+  font-size: 16px;
+}
+
+.input > input::placeholder {
+  color: #454545;
+  font-size: 16px;
+}
+
+.textarea > textarea {
+  width: 100%;
+  resize: none;
+  -webkit-border-radius: 16px;
+          border-radius: 16px;
+  border: 1px solid #83B100;
+  background-color: #FBFFF3;
+  outline: none;
+  padding-top: 15px;
+  padding-left: 16px;
+}
+
+.textarea > textarea::-webkit-input-placeholder {
+  color: #454545;
+  font-size: 16px;
+}
+
+.textarea > textarea::-moz-placeholder {
+  color: #454545;
+  font-size: 16px;
+}
+
+.textarea > textarea:-ms-input-placeholder {
+  color: #454545;
+  font-size: 16px;
+}
+
+.textarea > textarea::-ms-input-placeholder {
+  color: #454545;
+  font-size: 16px;
+}
+
+.textarea > textarea::placeholder {
+  color: #454545;
+  font-size: 16px;
+}
+
+.services {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  padding: 16px 8px;
+  text-align: center;
+  height: 100%;
+  -webkit-border-radius: 12px;
+          border-radius: 12px;
+  background-color: #FEFEFE;
+  -webkit-box-shadow: 0 0 10px 1px #EFEFEF;
+          box-shadow: 0 0 10px 1px #EFEFEF;
+  border: 1px solid transparent;
+  cursor: pointer;
+  grid-gap: 8px;
+}
+
+.services:hover {
+  -webkit-box-shadow: 0 0 10px 5px #EFEFEF;
+          box-shadow: 0 0 10px 5px #EFEFEF;
+}
+
+.services:active {
+  border-color: #597B00;
+}
+
+.services-card {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 100%;
+      -ms-flex: 0 1 100%;
+          flex: 0 1 100%;
+}
+
+.services-wrapper {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-flex: 2;
+  -webkit-flex-grow: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+}
+
+.services-title {
+  margin-bottom: 12px;
+}
+
+.services-text {
+  color: #FE308B;
+  margin-bottom: 0;
+}
+
+.services-input {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+  -webkit-justify-content: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 100%;
+      -ms-flex: 0 1 100%;
+          flex: 0 1 100%;
+}
+
+.services-input input {
+  width: 100%;
+  height: 37px;
+  padding: 9px 12px 10px;
+  -webkit-border-radius: 12px;
+          border-radius: 12px;
+  border: 1px solid #83B100;
+  background-color: #FBFFF3;
+  outline: none;
+}
+
+.services-input input::-webkit-input-placeholder {
+  color: #A0A29C;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.services-input input::-moz-placeholder {
+  color: #A0A29C;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.services-input input:-ms-input-placeholder {
+  color: #A0A29C;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.services-input input::-ms-input-placeholder {
+  color: #A0A29C;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.services-input input::placeholder {
+  color: #A0A29C;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.calendar-pick {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 50%;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+}
+
+.time-pick {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 50%;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+  padding-left: 44px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  grid-gap: 16px 21px;
+}
+
+.time-pick > .radio-text {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 -webkit-calc(33.33333% - 14px);
+      -ms-flex: 0 1 calc(33.33333% - 14px);
+          flex: 0 1 calc(33.33333% - 14px);
+}
+
+.time-pick > .radio-text > span {
+  height: 45px;
 }
 
 .first-block {
@@ -1078,6 +1809,36 @@ body.lock {
   }
 }
 
+@media screen and (max-width: 1180px) {
+  .calculator-wrapper .rooms > label {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 -webkit-calc(25% - 18px);
+        -ms-flex: 0 1 calc(25% - 18px);
+            flex: 0 1 calc(25% - 18px);
+  }
+
+  .calculator-wrapper .additional-services.widthX2 > .additional-services-item {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 -webkit-calc(50% - 12px);
+        -ms-flex: 0 1 calc(50% - 12px);
+            flex: 0 1 calc(50% - 12px);
+  }
+
+  .calculator-wrapper .additional-services > .additional-services-item {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 -webkit-calc(25% - 12px);
+        -ms-flex: 0 1 calc(25% - 12px);
+            flex: 0 1 calc(25% - 12px);
+  }
+
+  .calculator-wrapper .additional-services > .additional-services-item.active {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 -webkit-calc(50% - 12px);
+        -ms-flex: 0 1 calc(50% - 12px);
+            flex: 0 1 calc(50% - 12px);
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .header {
     -webkit-flex-wrap: wrap;
@@ -1159,6 +1920,117 @@ body.lock {
     max-width: 376px;
     margin: 0 auto;
     padding: 8px 10px;
+  }
+
+  .calculator-wrapper .calendar-time {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .calculator-wrapper .type-cleaning {
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    grid-gap: 18px;
+  }
+
+  .calculator-wrapper .type-cleaning > label {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 -webkit-calc(33.3333% - 12px);
+        -ms-flex: 0 1 calc(33.3333% - 12px);
+            flex: 0 1 calc(33.3333% - 12px);
+  }
+
+  .calculator-wrapper .rooms {
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    grid-gap: 24px;
+  }
+
+  .calculator-wrapper .rooms > label > span {
+    font-size: 14px;
+    padding: 3px;
+    height: 42px;
+  }
+
+  .calculator-wrapper .additional-services.widthX2 > .additional-services-item {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 -webkit-calc(50% - 12px);
+        -ms-flex: 0 1 calc(50% - 12px);
+            flex: 0 1 calc(50% - 12px);
+  }
+
+  .calculator-wrapper .additional-services > .additional-services-item {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 -webkit-calc(33.3333% - 10.66667px);
+        -ms-flex: 0 1 calc(33.3333% - 10.66667px);
+            flex: 0 1 calc(33.3333% - 10.66667px);
+  }
+
+  .calculator-wrapper .additional-services > .additional-services-item.active {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 -webkit-calc(66.6666% - 10.66667px);
+        -ms-flex: 0 1 calc(66.6666% - 10.66667px);
+            flex: 0 1 calc(66.6666% - 10.66667px);
+  }
+
+  .calculator-wrapper .address {
+    grid-gap: 12px;
+  }
+
+  .calculator-wrapper .address > .input {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 -webkit-calc(50% - 6px);
+        -ms-flex: 0 1 calc(50% - 6px);
+            flex: 0 1 calc(50% - 6px);
+  }
+
+  .calculator-wrapper .address > .input:first-child {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 -webkit-calc(50% - 6px);
+        -ms-flex: 0 1 calc(50% - 6px);
+            flex: 0 1 calc(50% - 6px);
+  }
+
+  .calculator-wrapper .contact-data {
+    grid-gap: 12px;
+  }
+
+  .calculator-wrapper .contact-data > .input {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 -webkit-calc(33.3333% - 8px);
+        -ms-flex: 0 1 calc(33.3333% - 8px);
+            flex: 0 1 calc(33.3333% - 8px);
+  }
+
+  .calculator-wrapper .contact-data > .textarea {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 -webkit-calc(50% - 6px);
+        -ms-flex: 0 1 calc(50% - 6px);
+            flex: 0 1 calc(50% - 6px);
+  }
+
+  .services {
+    padding: 12px 4px;
+  }
+
+  .calendar-pick {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 100%;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+  }
+
+  .time-pick {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 100%;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+    padding-left: 0;
   }
 
   .first-block {
@@ -1279,6 +2151,36 @@ body.lock {
 
   body {
     font-size: 14px;
+  }
+
+  .calculator-wrapper {
+    margin-bottom: 32px;
+  }
+
+  .calculator-wrapper > h2 {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .calculator-wrapper > h3 {
+    padding-left: 0;
+    font-size: 12px;
+    margin-top: -12px;
+    margin-bottom: 20px;
+  }
+
+  .calculator-wrapper .type-cleaning > label {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 -webkit-calc(50% - 12px);
+        -ms-flex: 0 1 calc(50% - 12px);
+            flex: 0 1 calc(50% - 12px);
+  }
+
+  .calculator-wrapper .additional-services.widthX2 > .additional-services-item {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 100%;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
   }
 
   .info-title > span {
@@ -1480,6 +2382,215 @@ body.lock {
 
   .works-reviews > h2 {
     margin-bottom: 24px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .calculator-wrapper .type-cleaning {
+    grid-gap: 12px;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+
+  .calculator-wrapper .type-cleaning > label {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 -webkit-calc(50% - 6px);
+        -ms-flex: 0 1 calc(50% - 6px);
+            flex: 0 1 calc(50% - 6px);
+  }
+
+  .calculator-wrapper .rooms {
+    grid-gap: 8px 16px;
+  }
+
+  .calculator-wrapper .rooms > label {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 -webkit-calc(50% - 8px);
+        -ms-flex: 0 1 calc(50% - 8px);
+            flex: 0 1 calc(50% - 8px);
+  }
+
+  .calculator-wrapper .numberBathRooms,
+  .calculator-wrapper .numberRooms {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    grid-gap: 8px;
+  }
+
+  .calculator-wrapper .numberBathRooms > label,
+  .calculator-wrapper .numberRooms > label {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 49px;
+        -ms-flex: 0 1 49px;
+            flex: 0 1 49px;
+  }
+
+  .calculator-wrapper .numberBathRooms > .input,
+  .calculator-wrapper .numberRooms > .input {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 -webkit-calc(100% - 57px);
+        -ms-flex: 0 1 calc(100% - 57px);
+            flex: 0 1 calc(100% - 57px);
+  }
+
+  .calculator-wrapper .total-square-footage {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    grid-gap: 8px;
+  }
+
+  .calculator-wrapper .total-square-footage-range {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 100%;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+  }
+
+  .calculator-wrapper .total-square-footage > .input {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 -webkit-calc(100% - 57px);
+        -ms-flex: 0 1 calc(100% - 57px);
+            flex: 0 1 calc(100% - 57px);
+  }
+
+  .calculator-wrapper .additional-services > .additional-services-item {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 -webkit-calc(50% - 8px);
+        -ms-flex: 0 1 calc(50% - 8px);
+            flex: 0 1 calc(50% - 8px);
+  }
+
+  .calculator-wrapper .additional-services > .additional-services-item.active {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 100%;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+  }
+
+  .calculator-wrapper .address > .input {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 100%;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+  }
+
+  .calculator-wrapper .address > .input:first-child {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 100%;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+  }
+
+  .calculator-wrapper .contact-data > .input {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 100%;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+  }
+
+  .calculator-wrapper .contact-data > .textarea {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 100%;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+  }
+
+  .calculator-wrapper .contact-data > .contact-text {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 100%;
+        -ms-flex: 0 1 100%;
+            flex: 0 1 100%;
+  }
+
+  .radio span {
+    padding-left: 28px;
+  }
+
+  .radio span:before {
+    width: 20px;
+    height: 20px;
+  }
+
+  .radio span:after {
+    width: 12px;
+    height: 12px;
+  }
+
+  .radio-text > span {
+    -webkit-border-radius: 10px;
+            border-radius: 10px;
+    height: 35px;
+  }
+
+  .counter > button {
+    -webkit-border-radius: 10px;
+            border-radius: 10px;
+    width: 49px;
+    height: 35px;
+  }
+
+  .counter label input {
+    -webkit-border-radius: 10px;
+            border-radius: 10px;
+    width: 49px;
+    height: 35px;
+  }
+
+  .input > input {
+    height: 35px;
+    -webkit-border-radius: 10px;
+            border-radius: 10px;
+  }
+
+  .input > input::-webkit-input-placeholder {
+    font-size: 12px;
+  }
+
+  .input > input::-moz-placeholder {
+    font-size: 12px;
+  }
+
+  .input > input:-ms-input-placeholder {
+    font-size: 12px;
+  }
+
+  .input > input::-ms-input-placeholder {
+    font-size: 12px;
+  }
+
+  .input > input::placeholder {
+    font-size: 12px;
+  }
+
+  .textarea > textarea {
+    -webkit-border-radius: 10px;
+            border-radius: 10px;
+  }
+
+  .textarea > textarea::-webkit-input-placeholder {
+    font-size: 12px;
+  }
+
+  .textarea > textarea::-moz-placeholder {
+    font-size: 12px;
+  }
+
+  .textarea > textarea:-ms-input-placeholder {
+    font-size: 12px;
+  }
+
+  .textarea > textarea::-ms-input-placeholder {
+    font-size: 12px;
+  }
+
+  .textarea > textarea::placeholder {
+    font-size: 12px;
   }
 }
 

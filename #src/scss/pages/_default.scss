@@ -13,8 +13,17 @@ body {
 		overflow: hidden;
 	}
 }
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+	/* display: none; <- Crashes Chrome on hover */
+	-webkit-appearance: none;
+	margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
 .btn {
 	--bs-btn-border-radius: 10px;
+}
+li::marker {
+	color: $black;
 }
 .btn-pink {
 	background-color: $pink-light;
@@ -102,6 +111,49 @@ body {
 				width: 24px;
 				height: 24px;
 			}
+		}
+	}
+}
+
+.my-checkbox {
+	& [type="checkbox"] {
+		display: none;
+		&:checked + span:after {
+			display: block ;
+		}
+	}
+	& span {
+		padding-left: 32px;
+		position: relative;
+		display: block;
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 5;
+			width: 24px;
+			height: 24px;
+			display: block;
+			border: 2px solid $accent;
+			border-radius: 3px;
+			cursor: pointer;
+		}
+		&:after {
+			content: '';
+			position: absolute;
+			top: 6px;
+			left: 4px;
+			z-index: 10;
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='12' viewBox='0 0 16 12' fill='none'%3e%3cpath d='M14.1622 0.310122C14.5826 -0.103374 15.2642 -0.103374 15.6847 0.310122C16.1 0.718547 16.105 1.37762 15.7 1.7922L7.09854 11.6608C7.09027 11.671 7.08143 11.6807 7.07207 11.6899C6.65164 12.1034 5.96999 12.1034 5.54956 11.6899L0.315322 6.54195C-0.105107 6.12846 -0.105107 5.45805 0.315322 5.04455C0.735751 4.63105 1.4174 4.63105 1.83783 5.04455L6.27838 9.41187L14.1336 0.341795C14.1425 0.330685 14.152 0.320108 14.1622 0.310122Z' fill='%2383B100'/%3e%3c/svg%3e");
+			background-repeat: no-repeat;
+			width: 16px;
+			height: 12px;
+			display: none;
+			cursor: pointer;
+		}
+		& > a {
+			color: $dark-green;
 		}
 	}
 }

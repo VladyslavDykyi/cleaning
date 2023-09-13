@@ -1,0 +1,856 @@
+<div class="col-md-9 calculator">
+	<section class="calculator-wrapper">
+		<h2 class="t-s-bold t-4">
+			1. Вид прибирання
+		</h2>
+		<div class="type-cleaning">
+			<label class="radio" for="normal">
+				<input type="radio" name="type-cleaning" id="normal" required>
+				<span>Звичайне</span>
+			</label>
+			<label class="radio" for="general">
+				<input type="radio" name="type-cleaning" id="general" required>
+				<span>Генеральне</span>
+			</label>
+			<label class="radio" for="after-repair">
+				<input type="radio" name="type-cleaning" id="after-repair" required>
+				<span>Після ремонту</span>
+			</label>
+			<label class="radio" for="eco">
+				<input type="radio" name="type-cleaning" id="eco" required>
+				<span>ЕСО</span>
+			</label>
+			<label class="radio" for="pre-afterParty">
+				<input type="radio" name="type-cleaning" id="pre-afterParty" required>
+				<span>Pre & AfterParty</span>
+			</label>
+			<label class="radio" for="dry-cleaner">
+				<input type="radio" name="type-cleaning" id="dry-cleaner" required>
+				<span>Хімчистка</span>
+			</label>
+		</div>
+	</section>
+	<section class="calculator-wrapper">
+		<h2 class="t-s-bold t-4">
+			2. Режим TURBO
+		</h2>
+		<div class="counter-wrapper">
+			<p class="t-s-bold">
+				Додати клінерів
+			</p>
+			<div class="counter">
+				<button class="back" type="button">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+						<path fill-rule="evenodd" clip-rule="evenodd"
+							  d="M3 12C3 11.5858 3.33579 11.25 3.75 11.25H20.25C20.6642 11.25 21 11.5858 21 12C21 12.4142 20.6642 12.75 20.25 12.75H3.75C3.33579 12.75 3 12.4142 3 12Z"
+							  fill="#A0A29C"/>
+					</svg>
+				</button>
+				<label for="countCleaner">
+					<input type="number" name="countCleaner" id="countCleaner" value="1" required>
+				</label>
+				<button class="next" type="button">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+						<path fill-rule="evenodd" clip-rule="evenodd"
+							  d="M12 3C12.4142 3 12.75 3.33579 12.75 3.75V11.25H20.25C20.6642 11.25 21 11.5858 21 12C21 12.4142 20.6642 12.75 20.25 12.75H12.75V20.25C12.75 20.6642 12.4142 21 12 21C11.5858 21 11.25 20.6642 11.25 20.25V12.75H3.75C3.33579 12.75 3 12.4142 3 12C3 11.5858 3.33579 11.25 3.75 11.25H11.25V3.75C11.25 3.33579 11.5858 3 12 3Z"
+							  fill="#A0A29C"/>
+					</svg>
+				</button>
+			</div>
+		</div>
+	</section>
+	<section class="calculator-wrapper">
+		<h2 class="t-s-bold t-4">
+			3. Тип приміщення
+		</h2>
+		<div class="rooms">
+			<label class="radio-text" for="apartment">
+				<input type="radio" name="rooms" id="apartment">
+				<span>Квартира</span>
+			</label>
+			<label class="radio-text" for="house">
+				<input type="radio" name="rooms" id="house">
+				<span>Будинок</span>
+			</label>
+			<label class="radio-text" for="apartmentForDailyRent">
+				<input type="radio" name="rooms" id="apartmentForDailyRent">
+				<span>Квартира в оренді подобово</span>
+			</label>
+			<label class="radio-text" for="office">
+				<input type="radio" name="rooms" id="office">
+				<span>Офіс</span>
+			</label>
+		</div>
+	</section>
+	<section class="calculator-wrapper">
+		<h2 class="t-s-bold t-4">
+			4. Кількість кімнат
+		</h2>
+		<div class="numberRooms">
+			<label class="radio-text" for="numberRooms1">
+				<input type="radio" name="numberRooms" id="numberRooms1">
+				<span>1</span>
+			</label>
+			<label class="radio-text" for="numberRooms2">
+				<input type="radio" name="numberRooms" id="numberRooms2">
+				<span>2</span>
+			</label>
+			<label class="radio-text" for="numberRooms3">
+				<input type="radio" name="numberRooms" id="numberRooms3">
+				<span>3</span>
+			</label>
+			<label class="radio-text" for="numberRooms4">
+				<input type="radio" name="numberRooms" id="numberRooms4">
+				<span>4</span>
+			</label>
+			<label class="radio-text" for="numberRooms5">
+				<input type="radio" name="numberRooms" id="numberRooms5">
+				<span>5</span>
+			</label>
+			<label class="radio-text" for="numberRooms6">
+				<input type="radio" name="numberRooms" id="numberRooms6">
+				<span>6</span>
+			</label>
+			<label class="input" for="numberRoomsInput">
+				<input type="number" name="numberRoomsInput" id="numberRoomsInput"
+					   placeholder="Введіть власноруч, якщо більше">
+			</label>
+		</div>
+	</section>
+	<section class="calculator-wrapper">
+		<h2 class="t-s-bold t-4">
+			5. Кількість санвузлів
+		</h2>
+		<div class="numberBathRooms">
+			<label class="radio-text" for="numberBathRooms1">
+				<input type="radio" name="numberBathRooms" id="numberBathRooms1">
+				<span>1</span>
+			</label>
+			<label class="radio-text" for="numberBathRooms2">
+				<input type="radio" name="numberBathRooms" id="numberBathRooms2">
+				<span>2</span>
+			</label>
+			<label class="radio-text" for="numberBathRooms3">
+				<input type="radio" name="numberBathRooms" id="numberBathRooms3">
+				<span>3</span>
+			</label>
+			<label class="radio-text" for="numberBathRooms4">
+				<input type="radio" name="numberBathRooms" id="numberBathRooms4">
+				<span>4</span>
+			</label>
+			<label class="radio-text" for="numberBathRooms5">
+				<input type="radio" name="numberBathRooms" id="numberBathRooms5">
+				<span>5</span>
+			</label>
+			<label class="radio-text" for="numberBathRooms6">
+				<input type="radio" name="numberBathRooms" id="numberBathRooms6">
+				<span>6</span>
+			</label>
+			<label class="input" for="numberBathRoomsInput">
+				<input type="number" name="numberBathRoomsInput" id="numberBathRoomsInput"
+					   placeholder="Введіть власноруч, якщо більше">
+			</label>
+		</div>
+	</section>
+	<section class="calculator-wrapper">
+		<h2 class="t-s-bold t-4">
+			6. Загальний метраж приміщення
+		</h2>
+		<div class="total-square-footage">
+			<div class="total-square-footage-range">
+				min 10m2 max 200m2
+			</div>
+			<label class="input" for="totalSquareFootage">
+				<input type="number" name="totalSquareFootage" id="totalSquareFootage"
+					   placeholder="Введіть власноруч, якщо більше">
+			</label>
+		</div>
+	</section>
+	<section class="calculator-wrapper">
+		<h2 class="t-s-bold t-4">
+			7. Додаткові послуги
+		</h2>
+		<div class="additional-services">
+			<div class="additional-services-item">
+				<input type="checkbox" name="ovenWashing" id="ovenWashing">
+				<label class="services" for="ovenWashing">
+					<span class="services-card">
+						<img src="./img/additional-services/oven-washing.svg" alt="">
+						<span class="services-wrapper">
+							<span class="services-title t-s-bold t-8">Миття духової шафи</span>
+							<span class="services-text t-bold t-4">300 грн</span>
+						</span>
+					</span>
+				</label>
+			</div>
+			<div class="additional-services-item">
+				<input type="checkbox" name="hoodWashing" id="hoodWashing">
+				<label class="services" for="hoodWashing">
+					<span class="services-card">
+						<img src="./img/additional-services/hood-washing.svg" alt="">
+						<span class="services-wrapper">
+							<span class="services-title t-s-bold t-8">Миття витяжки </span>
+							<span class="services-text t-bold t-4">200 грн</span>
+						</span>
+					</span>
+				</label>
+			</div>
+			<div class="additional-services-item">
+				<input type="checkbox" name="kitchenCabinets" id="kitchenCabinets">
+				<label class="services" for="kitchenCabinets">
+					<span class="services-card">
+						<img src="./img/additional-services/kitchen-cabinets.svg" alt="">
+						<span class="services-wrapper">
+							<span class="services-title t-s-bold t-8">Прибирання в кухонних шафах</span>
+							<span class="services-text t-bold t-4">300 грн</span>
+						</span>
+					</span>
+				</label>
+			</div>
+			<div class="additional-services-item">
+				<input type="checkbox" name="washingDishes" id="washingDishes">
+				<label class="services" for="washingDishes">
+					<span class="services-card">
+						<img src="./img/additional-services/washing-dishes.svg" alt="">
+						<span class="services-wrapper">
+							<span class="services-title t-s-bold t-8">Миття посуду</span>
+							<span class="services-text t-bold t-4">160 грн</span>
+						</span>
+					</span>
+				</label>
+			</div>
+			<div class="additional-services-item">
+				<input type="checkbox" name="fridge" id="fridge">
+				<label class="services" for="fridge">
+					<span class="services-card">
+						<img src="./img/additional-services/fridge.svg" alt="">
+						<span class="services-wrapper">
+							<span class="services-title t-s-bold t-8">Миття холодильника</span>
+							<span class="services-text t-bold t-4">270 грн</span>
+						</span>
+					</span>
+				</label>
+			</div>
+			<div class="additional-services-item">
+				<input type="checkbox" name="microwaves" id="microwaves">
+				<label class="services" for="microwaves">
+					<span class="services-card">
+					<img src="./img/additional-services/microwaves.svg" alt="">
+						<span class="services-wrapper">
+							<span class="services-title t-s-bold t-8">Миття мікрохвильовки</span>
+							<span class="services-text t-bold t-4">160 грн</span>
+						</span>
+					</span>
+				</label>
+			</div>
+			<div class="additional-services-item">
+				<input type="checkbox" name="balcony" id="balcony">
+				<label class="services" for="balcony">
+					<span class="services-card">
+						<img src="./img/additional-services/balcony.svg" alt="">
+						<span class="services-wrapper">
+							<span class="services-title t-s-bold t-8">Прибирання балкона</span>
+							<span class="services-text t-bold t-4">160 грн</span>
+						</span>
+					</span>
+				</label>
+			</div>
+			<div class="additional-services-item active">
+				<input type="checkbox" name="windowWashing" id="windowWashing">
+				<label class="services" for="windowWashing">
+					<span class="services-card">
+						<img src="./img/additional-services/window-washing.svg" alt="">
+						<span class="services-wrapper">
+							<span class="services-title t-s-bold t-8">Миття вікон </span>
+							<span class="services-text t-bold t-4">70 грн</span>
+						</span>
+					</span>
+					<label class="services-input" for="windowWashingInput">
+						<span class="t-8">Вкажіть площу у м2:</span>
+						<input type="number" name="windowWashingInput" id="windowWashingInput" placeholder="34 м2">
+					</label>
+				</label>
+			</div>
+			<div class="additional-services-item">
+				<input type="checkbox" name="animalTray" id="animalTray">
+				<label class="services" for="animalTray">
+					<span class="services-card">
+						<img src="./img/additional-services/animal-tray.svg" alt="">
+						<span class="services-wrapper">
+							<span class="services-title t-s-bold t-8">Прибирання лотка для тварин</span>
+							<span class="services-text t-bold t-4">150 грн</span>
+						</span>
+					</span>
+				</label>
+			</div>
+			<div class="additional-services-item">
+				<input type="checkbox" name="oneHour" id="oneHour">
+				<label class="services" for="oneHour">
+					<span class="services-card">
+						<img src="./img/additional-services/one-hour.svg" alt="">
+						<span class="services-wrapper">
+							<span class="services-title t-s-bold t-8">Додаткова година</span>
+							<span class="services-text t-bold t-4">200 грн</span>
+						</span>
+					</span>
+				</label>
+			</div>
+			<div class="additional-services-item">
+				<input type="checkbox" name="kitchen" id="kitchen">
+				<label class="services" for="kitchen">
+					<span class="services-card">
+						<img src="./img/additional-services/kitchen.svg" alt="">
+						<span class="services-wrapper">
+							<span class="services-title t-s-bold t-8">Генеральне прибирання кухні</span>
+							<span class="services-text t-bold t-4">1400 грн</span>
+						</span>
+					</span>
+				</label>
+			</div>
+			<div class="additional-services-item">
+				<input type="checkbox" name="wardrobe" id="wardrobe">
+				<label class="services" for="wardrobe">
+					<span class="services-card">
+						<img src="./img/additional-services/wardrobe.svg" alt="">
+						<span class="services-wrapper">
+							<span class="services-title t-s-bold t-8">Гардеробна</span>
+							<span class="services-text t-bold t-4">130 грн</span>
+						</span>
+					</span>
+				</label>
+			</div>
+			<div class="additional-services-item">
+				<input type="checkbox" name="vacuumCleaner" id="vacuumCleaner">
+				<label class="services" for="vacuumCleaner">
+					<span class="services-card">
+						<img src="./img/additional-services/vacuum-cleaner.svg" alt="">
+						<span class="services-wrapper">
+							<span class="services-title t-s-bold t-8">Пилосмок на замовлення</span>
+							<span class="services-text t-bold t-4">120 грн</span>
+						</span>
+					</span>
+				</label>
+			</div>
+			<div class="additional-services-item">
+				<input type="checkbox" name="stepladder" id="stepladder">
+				<label class="services" for="stepladder">
+					<span class="services-card">
+						<img src="./img/additional-services/stepladder.svg" alt="">
+						<span class="services-wrapper">
+							<span class="services-title t-s-bold t-8">Стремянка на замовлення</span>
+							<span class="services-text t-bold t-4">300 грн</span>
+						</span>
+					</span>
+				</label>
+			</div>
+			<div class="additional-services-item">
+				<input type="checkbox" name="deliveryOfKeysInOneDirection" id="deliveryOfKeysInOneDirection">
+				<label class="services" for="deliveryOfKeysInOneDirection">
+					<span class="services-card">
+						<img src="./img/additional-services/delivery-of-keys-in-one-direction.svg" alt="">
+						<span class="services-wrapper">
+							<span class="services-title t-s-bold t-8">Доставка ключів в одну сторону</span>
+							<span class="services-text t-bold t-4">250 грн</span>
+						</span>
+					</span>
+				</label>
+			</div>
+			<div class="additional-services-item">
+				<input type="checkbox" name="closet" id="closet">
+				<label class="services" for="closet">
+					<span class="services-card">
+						<img src="./img/additional-services/closet.svg" alt="">
+						<span class="services-wrapper">
+							<span class="services-title t-s-bold t-8">Прибирання в шафі</span>
+							<span class="services-text t-bold t-4">190 грн</span>
+						</span>
+					</span>
+				</label>
+			</div>
+			<div class="additional-services-item">
+				<input type="checkbox" name="bathroom" id="bathroom">
+				<label class="services" for="bathroom">
+					<span class="services-card">
+						<img src="./img/additional-services/bathroom.svg" alt="">
+						<span class="services-wrapper">
+							<span class="services-title t-s-bold t-8">+1 Санвузол (ванна/душова)</span>
+							<span class="services-text t-bold t-4">250 грн</span>
+						</span>
+					</span>
+				</label>
+			</div>
+			<div class="additional-services-item">
+				<input type="checkbox" name="toilet" id="toilet">
+				<label class="services" for="toilet">
+					<span class="services-card">
+						<img src="./img/additional-services/toilet.svg" alt="">
+						<span class="services-wrapper">
+							<span class="services-title t-s-bold t-8">+Туалет (унітаз/рукомийник)</span>
+							<span class="services-text t-bold t-4">150 грн</span>
+						</span>
+					</span>
+				</label>
+			</div>
+		</div>
+	</section>
+	<section class="calculator-wrapper">
+		<h2 class="t-s-bold t-4">
+			8. Замовити хімчистку меблів та килимів
+		</h2>
+		<h3 class="t-s-bold t-6">
+			Замовити хімчистку одночасно з прибиранням та отримати 30% знижки
+		</h3>
+		<div class="additional-services">
+			<div class="additional-services-item">
+				<input type="checkbox" name="doubleSofa" id="doubleSofa">
+				<label class="services" for="doubleSofa">
+					<span class="services-card">
+						<img src="./img/additional-services/double-sofa.svg" alt="">
+						<span class="services-wrapper">
+							<span class="services-title t-s-bold t-8">Двомісний диван</span>
+							<span class="services-text t-bold t-4">450 грн</span>
+						</span>
+					</span>
+				</label>
+			</div>
+			<div class="additional-services-item">
+				<input type="checkbox" name="threeSeaterSofa" id="threeSeaterSofa">
+				<label class="services" for="threeSeaterSofa">
+					<span class="services-card">
+						<img src="./img/additional-services/three-seater-sofa.svg" alt="">
+						<span class="services-wrapper">
+							<span class="services-title t-s-bold t-8">Тримісний диван</span>
+							<span class="services-text t-bold t-4">600 грн</span>
+						</span>
+					</span>
+				</label>
+			</div>
+			<div class="additional-services-item">
+				<input type="checkbox" name="fourSeaterSofa" id="fourSeaterSofa">
+				<label class="services" for="fourSeaterSofa">
+					<span class="services-card">
+						<img src="./img/additional-services/four-seater-sofa.svg" alt="">
+						<span class="services-wrapper">
+							<span class="services-title t-s-bold t-8">Чотиримісний диван</span>
+							<span class="services-text t-bold t-4">900 грн</span>
+						</span>
+					</span>
+				</label>
+			</div>
+			<div class="additional-services-item">
+				<input type="checkbox" name="cornerSofa5-6Seats" id="cornerSofa5-6Seats">
+				<label class="services" for="cornerSofa5-6Seats">
+					<span class="services-card">
+						<img src="./img/additional-services/corner-sofa-5-6-seats.svg" alt="">
+						<span class="services-wrapper">
+							<span class="services-title t-s-bold t-8">Кутовий диван (5-6 місць)</span>
+							<span class="services-text t-bold t-4">1 000 грн</span>
+						</span>
+					</span>
+				</label>
+			</div>
+			<div class="additional-services-item">
+				<input type="checkbox" name="cornerSofa7PlusSeats" id="cornerSofa7PlusSeats">
+				<label class="services" for="cornerSofa7PlusSeats">
+					<span class="services-card">
+						<img src="./img/additional-services/corner-sofa-7plus-seats.svg" alt="">
+						<span class="services-wrapper">
+							<span class="services-title t-s-bold t-8">Кутовий диван (7+ місць)</span>
+							<span class="services-text t-bold t-4">1 100 грн</span>
+						</span>
+					</span>
+				</label>
+			</div>
+			<div class="additional-services-item">
+				<input type="checkbox" name="singleMattress1Side" id="singleMattress1Side">
+				<label class="services" for="singleMattress1Side">
+					<span class="services-card">
+						<img src="./img/additional-services/single-mattress-1-side.svg" alt="">
+						<span class="services-wrapper">
+							<span class="services-title t-s-bold t-8">Односпальний матрац 1 сторона</span>
+							<span class="services-text t-bold t-4">250 грн</span>
+						</span>
+					</span>
+				</label>
+			</div>
+			<div class="additional-services-item">
+				<input type="checkbox" name="singleMattress2Sides" id="singleMattress2Sides">
+				<label class="services" for="singleMattress2Sides">
+					<span class="services-card">
+						<img src="./img/additional-services/single-mattress-2-sides.svg" alt="">
+						<span class="services-wrapper">
+							<span class="services-title t-s-bold t-8">Односпальний матрац 2 сторони</span>
+							<span class="services-text t-bold t-4">400 грн</span>
+						</span>
+					</span>
+				</label>
+			</div>
+			<div class="additional-services-item">
+				<input type="checkbox" name="twoBedMattress1Side" id="twoBedMattress1Side">
+				<label class="services" for="twoBedMattress1Side">
+					<span class="services-card">
+						<img src="./img/additional-services/two-bed-mattress-1-side.svg" alt="">
+						<span class="services-wrapper">
+							<span class="services-title t-s-bold t-8">2-спальний матрац 1 сторона</span>
+							<span class="services-text t-bold t-4">400 грн</span>
+						</span>
+					</span>
+				</label>
+			</div>
+			<div class="additional-services-item">
+				<input type="checkbox" name="twoBedMattress2Side" id="twoBedMattress2Side">
+				<label class="services" for="twoBedMattress2Side">
+					<span class="services-card">
+						<img src="./img/additional-services/two-bed-mattress-2-side.svg" alt="">
+						<span class="services-wrapper">
+							<span class="services-title t-s-bold t-8">2-спальний матрац 2 сторона</span>
+							<span class="services-text t-bold t-4">800 грн</span>
+						</span>
+					</span>
+				</label>
+			</div>
+			<div class="additional-services-item">
+				<input type="checkbox" name="chair" id="chair">
+				<label class="services" for="chair">
+					<span class="services-card">
+						<img src="./img/additional-services/chair.svg" alt="">
+						<span class="services-wrapper">
+							<span class="services-title t-s-bold t-8">Крісло</span>
+							<span class="services-text t-bold t-4">250 грн</span>
+						</span>
+					</span>
+				</label>
+			</div>
+			<div class="additional-services-item">
+				<input type="checkbox" name="stoolOrStool" id="stoolOrStool">
+				<label class="services" for="stoolOrStool">
+					<span class="services-card">
+						<img src="./img/additional-services/stool-or-a-stool.svg" alt="">
+						<span class="services-wrapper">
+							<span class="services-title t-s-bold t-8">Стілець або табурет</span>
+							<span class="services-text t-bold t-4">90 грн</span>
+						</span>
+					</span>
+				</label>
+			</div>
+			<div class="additional-services-item">
+				<input type="checkbox" name="officeChair" id="officeChair">
+				<label class="services" for="officeChair">
+					<span class="services-card">
+						<img src="./img/additional-services/office-chair.svg" alt="">
+						<span class="services-wrapper">
+							<span class="services-title t-s-bold t-8">Офісний стілець</span>
+							<span class="services-text t-bold t-4">100 грн</span>
+						</span>
+					</span>
+				</label>
+			</div>
+			<div class="additional-services-item">
+				<input type="checkbox" name="softHeadboard" id="softHeadboard">
+				<label class="services" for="softHeadboard">
+					<span class="services-card">
+						<img src="./img/additional-services/soft-headboard.svg" alt="">
+						<span class="services-wrapper">
+							<span class="services-title t-s-bold t-8">Мʼяке узголівʼя ліжка</span>
+							<span class="services-text t-bold t-4">500 грн</span>
+						</span>
+					</span>
+				</label>
+			</div>
+			<div class="additional-services-item">
+				<input type="checkbox" name="babyCarriage" id="babyCarriage">
+				<label class="services" for="babyCarriage">
+					<span class="services-card">
+						<img src="./img/additional-services/baby-carriage.svg" alt="">
+						<span class="services-wrapper">
+							<span class="services-title t-s-bold t-8">Дитячій візок</span>
+							<span class="services-text t-bold t-4">500 грн</span>
+						</span>
+					</span>
+				</label>
+			</div>
+			<div class="additional-services-item active">
+				<input type="checkbox" name="carpet" id="carpet">
+				<label class="services" for="carpet">
+					<span class="services-card">
+						<img src="./img/additional-services/carpet.svg" alt="">
+						<span class="services-wrapper">
+							<span class="services-title t-s-bold t-8">Килим (м2)</span>
+							<span class="services-text t-bold t-4">70 грн</span>
+						</span>
+					</span>
+					<label class="services-input" for="carpetInput">
+						<span class="t-8">Вкажіть площу у м2:</span>
+						<input type="number" name="carpetInput" id="carpetInput" placeholder="34 м2">
+					</label>
+				</label>
+			</div>
+			<div class="additional-services-item active">
+				<input type="checkbox" name="carpeting" id="carpeting">
+				<label class="services" for="carpeting">
+					<span class="services-card">
+						<img src="./img/additional-services/carpeting.svg" alt="">
+						<span class="services-wrapper">
+							<span class="services-title t-s-bold t-8">Килимове покриття (м2)</span>
+							<span class="services-text t-bold t-4">70 грн</span>
+						</span>
+					</span>
+					<label class="services-input" for="carpetingInput">
+						<span class="t-8">Вкажіть площу у м2:</span>
+						<input type="number" name="carpetingInput" id="carpetingInput" placeholder="34 м2">
+					</label>
+				</label>
+			</div>
+		</div>
+	</section>
+	<section class="calculator-wrapper">
+		<h2 class="t-s-bold t-4">
+			9. Послуги з прання білизни
+		</h2>
+		<div class="additional-services widthX2">
+			<div class="additional-services-item">
+				<input type="checkbox" name="bedLinenTowels" id="bedLinenTowels">
+				<label class="services" for="bedLinenTowels">
+					<span class="services-card">
+						<img src="./img/additional-services/bed-linen-towels.svg" alt="">
+						<span class="services-wrapper">
+							<span class="services-title t-s-bold t-8">Постільна білизна, рушники</span>
+							<span class="services-text t-bold t-4">75 грн / кг</span>
+						</span>
+					</span>
+					<label class="services-input" for="bedLinenTowelsInput">
+						<span class="t-8">Вкажіть вагу у кг:</span>
+						<input type="number" name="bedLinenTowelsInput" id="bedLinenTowelsInput" placeholder="5 кг">
+					</label>
+				</label>
+			</div>
+			<div class="additional-services-item">
+				<input type="checkbox" name="clothes" id="clothes">
+				<label class="services" for="clothes">
+					<span class="services-card">
+						<img src="./img/additional-services/clothes.svg" alt="">
+						<span class="services-wrapper">
+							<span class="services-title t-s-bold t-8">Одяг - футболки, сорочки, джинси, реглани, махрові халати</span>
+							<span class="services-text t-bold t-4">70 грн / кг</span>
+						</span>
+					</span>
+					<label class="services-input" for="clothesInput">
+						<span class="t-8">Вкажіть вагу у кг:</span>
+						<input type="number" name="clothesInput" id="clothesInput" placeholder="5 кг">
+					</label>
+				</label>
+			</div>
+			<div class="additional-services-item">
+				<input type="checkbox" name="curtainsWithoutIroning" id="curtainsWithoutIroning">
+				<label class="services" for="curtainsWithoutIroning">
+					<span class="services-card">
+						<img src="./img/additional-services/curtains-without-ironing.svg" alt="">
+						<span class="services-wrapper">
+							<span class="services-title t-s-bold t-8">Штори, гардини (без прасування)</span>
+							<span class="services-text t-bold t-4">150 грн / кг</span>
+						</span>
+					</span>
+					<label class="services-input" for="curtainsWithoutIroningInput">
+						<span class="t-8">Вкажіть вагу у кг:</span>
+						<input type="number" name="curtainsWithoutIroningInput" id="curtainsWithoutIroningInput" placeholder="5 кг">
+					</label>
+				</label>
+			</div>
+			<div class="additional-services-item">
+				<input type="checkbox" name="blanketBlanketBedspread" id="blanketBlanketBedspread">
+				<label class="services" for="blanketBlanketBedspread">
+					<span class="services-card">
+						<img src="./img/additional-services/blanket-blanket-bedspread.svg" alt="">
+						<span class="services-wrapper">
+							<span class="services-title t-s-bold t-8">Ковдра, плед, покривало</span>
+							<span class="services-text t-bold t-4">350 грн / кг</span>
+						</span>
+					</span>
+					<label class="services-input" for="blanketBlanketBedspreadInput">
+						<span class="t-8">Вкажіть вагу у кг:</span>
+						<input type="number" name="blanketBlanketBedspreadInput" id="blanketBlanketBedspreadInput" placeholder="5 кг">
+					</label>
+				</label>
+			</div>
+			<div class="additional-services-item">
+				<input type="checkbox" name="blanketBlanketBedspreadNaturalWoolFluff" id="blanketBlanketBedspreadNaturalWoolFluff">
+				<label class="services" for="blanketBlanketBedspreadNaturalWoolFluff">
+					<span class="services-card">
+						<img src="./img/additional-services/blanket-blanket-bedspread-natural-wool-fluff.svg" alt="">
+						<span class="services-wrapper">
+							<span class="services-title t-s-bold t-8">Ковдра, плед, покривало (натур. вовна, пух)</span>
+							<span class="services-text t-bold t-4">450 грн / кг</span>
+						</span>
+					</span>
+					<label class="services-input" for="blanketBlanketBedspreadNaturalWoolFluffInput">
+						<span class="t-8">Вкажіть вагу у кг:</span>
+						<input type="number" name="blanketBlanketBedspreadNaturalWoolFluffInput" id="blanketBlanketBedspreadNaturalWoolFluffInput" placeholder="5 кг">
+					</label>
+				</label>
+			</div>
+			<div class="additional-services-item">
+				<input type="checkbox" name="laundryDelivery" id="laundryDelivery">
+				<label class="services" for="laundryDelivery">
+					<span class="services-card">
+						<img src="./img/additional-services/laundry-delivery.svg" alt="">
+						<span class="services-wrapper">
+							<span class="services-title t-s-bold t-8">Доставка білизни</span>
+							<span class="services-text t-bold t-4">250 грн / кг</span>
+						</span>
+					</span>
+					<label class="services-input" for="laundryDeliveryInput">
+						<span class="t-8">Вкажіть вагу у кг:</span>
+						<input type="number" name="laundryDeliveryInput" id="laundryDeliveryInput" placeholder="5 кг">
+					</label>
+				</label>
+			</div>
+		</div>
+	</section>
+	<section class="calculator-wrapper">
+		<h2 class="t-s-bold t-4">
+			10. Дата та час
+		</h2>
+		<div class="calendar-time">
+			<div class="calendar-pick">
+
+			</div>
+			<div class="time-pick">
+				<label class="radio-text" for="time1">
+					<input type="radio" name="time" id="time1">
+					<span>9:00</span>
+				</label>
+				<label class="radio-text" for="time2">
+					<input type="radio" name="time" id="time2">
+					<span>9:30</span>
+				</label>
+				<label class="radio-text" for="time3">
+					<input type="radio" name="time" id="time3">
+					<span>10:00</span>
+				</label>
+				<label class="radio-text" for="time4">
+					<input type="radio" name="time" id="time4">
+					<span>10:30</span>
+				</label>
+				<label class="radio-text" for="time5">
+					<input type="radio" name="time" id="time5">
+					<span>11:00</span>
+				</label>
+				<label class="radio-text" for="time6">
+					<input type="radio" name="time" id="time6">
+					<span>11:30</span>
+				</label>
+				<label class="radio-text" for="time7">
+					<input type="radio" name="time" id="time7">
+					<span>12:00</span>
+				</label>
+				<label class="radio-text" for="time8">
+					<input type="radio" name="time" id="time8">
+					<span>12:30</span>
+				</label>
+				<label class="radio-text" for="time9">
+					<input type="radio" name="time" id="time9">
+					<span>13:00</span>
+				</label>
+				<label class="radio-text" for="time10">
+					<input type="radio" name="time" id="time10">
+					<span>13:30</span>
+				</label>
+				<label class="radio-text" for="time11">
+					<input type="radio" name="time" id="time11">
+					<span>14:00</span>
+				</label>
+				<label class="radio-text" for="time12">
+					<input type="radio" name="time" id="time12">
+					<span>14:30</span>
+				</label>
+				<label class="radio-text" for="time13">
+					<input type="radio" name="time" id="time13">
+					<span>15:00</span>
+				</label>
+				<label class="radio-text" for="time14">
+					<input type="radio" name="time" id="time14">
+					<span>15:30</span>
+				</label>
+				<label class="radio-text" for="time15">
+					<input type="radio" name="time" id="time15">
+					<span>16:00</span>
+				</label>
+				<label class="radio-text" for="time16">
+					<input type="radio" name="time" id="time16">
+					<span>16:30</span>
+				</label>
+				<label class="radio-text" for="time17">
+					<input type="radio" name="time" id="time17">
+					<span>17:00</span>
+				</label>
+				<label class="radio-text" for="time18">
+					<input type="radio" name="time" id="time18">
+					<span>17:30</span>
+				</label>
+				<label class="radio-text" for="time19">
+					<input type="radio" name="time" id="time19">
+					<span>18:00</span>
+				</label>
+				<label class="radio-text" for="time20">
+					<input type="radio" name="time" id="time20">
+					<span>18:30</span>
+				</label>
+				<label class="radio-text" for="time21">
+					<input type="radio" name="time" id="time21">
+					<span>19:00</span>
+				</label>
+			</div>
+		</div>
+	</section>
+	<section class="calculator-wrapper">
+		<h2 class="t-s-bold t-4">
+			11. Вкажіть вашу адресу
+		</h2>
+		<div class="address">
+			<label class="input" for="street">
+				<input type="text" name="street" id="street" placeholder="Вулиця" required>
+			</label>
+			<label class="input" for="apartmentNo">
+				<input type="tel" name="apartmentNo" id="apartmentNo" placeholder="№ квартири" required>
+			</label>
+			<label class="input" for="houseNo">
+				<input type="email" name="houseNo" id="houseNo" placeholder="№ будинку" required>
+			</label>
+			<label class="input" for="caseNo">
+				<input type="text" name="caseNo" id="caseNo" placeholder="№ корпусу" required>
+			</label>
+			<label class="input" for="entranceNo">
+				<input type="tel" name="entranceNo" id="entranceNo" placeholder="№ підʼїзду" required>
+			</label>
+			<label class="input" for="floorNo">
+				<input type="email" name="floorNo" id="floorNo" placeholder="№ Поверх" required>
+			</label>
+			<label class="input" for="intercomCode">
+				<input type="email" name="intercomCode" id="intercomCode" placeholder="Код домофона" required>
+			</label>
+		</div>
+	</section>
+	<section class="calculator-wrapper">
+		<h2 class="t-s-bold t-4">
+			12. Вкажіть ваші контактні дані
+		</h2>
+		<div class="contact-data">
+			<label class="input" for="userName">
+				<input type="text" name="userName" id="userName" placeholder="Ваше імʼя" required>
+			</label>
+			<label class="input" for="userTel">
+				<input type="tel" name="userTel" id="userTel" placeholder="+38 (0 _ _ ) - _ _ _ - _ _ - _ _" required>
+			</label>
+			<label class="input" for="userEmail">
+				<input type="email" name="userEmail" id="userEmail" placeholder="Email" required>
+			</label>
+			<label class="textarea" for="comment">
+				<textarea name="comment" id="comment" cols="30" rows="10" placeholder="Коментар (опціонно)"></textarea>
+			</label>
+			<p class="contact-text">
+				Наш менеджер звʼяжеться з вами для уточнення деталей або для підтвердження замовлення.
+				Або чекайте повідомлення з підтвердженням замовлення у ваших месенджерах.
+			</p>
+		</div>
+	</section>
+</div>
