@@ -38,7 +38,7 @@
 			}
 		}
 		& .type-cleaning {
-			@media screen and (max-width: 1024px) {
+			@media screen and (max-width: 1140px) {
 				flex-wrap: wrap;
 				grid-gap: 18px;
 			}
@@ -47,7 +47,7 @@
 				align-items: flex-start;
 			}
 			& > label {
-				@media screen and (max-width: 1024px) {
+				@media screen and (max-width: 1140px) {
 					flex: 0 1 calc(33.3333% - 12px);
 				}
 				@media screen and (max-width: 768px) {

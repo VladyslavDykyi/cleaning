@@ -521,6 +521,7 @@ li::marker {
 
 .aside .bi {
   color: #FE308B;
+  margin-right: 8px;
 }
 
 .aside-list {
@@ -1839,6 +1840,22 @@ li::marker {
   }
 }
 
+@media screen and (max-width: 1140px) {
+  .calculator-wrapper .type-cleaning {
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    grid-gap: 18px;
+  }
+
+  .calculator-wrapper .type-cleaning > label {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 -webkit-calc(33.3333% - 12px);
+        -ms-flex: 0 1 calc(33.3333% - 12px);
+            flex: 0 1 calc(33.3333% - 12px);
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .header {
     -webkit-flex-wrap: wrap;
@@ -1928,20 +1945,6 @@ li::marker {
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
-  }
-
-  .calculator-wrapper .type-cleaning {
-    -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-    grid-gap: 18px;
-  }
-
-  .calculator-wrapper .type-cleaning > label {
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 1 -webkit-calc(33.3333% - 12px);
-        -ms-flex: 0 1 calc(33.3333% - 12px);
-            flex: 0 1 calc(33.3333% - 12px);
   }
 
   .calculator-wrapper .rooms {
