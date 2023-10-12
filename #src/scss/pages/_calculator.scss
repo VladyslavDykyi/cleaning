@@ -3,6 +3,10 @@
 @import '../default/_mixins';
 
 .calculator {
+	width: calc(100% - 330px);
+	@media screen and (max-width: 768px) {
+		width: 100%;
+	}
 	&-wrapper {
 		margin-bottom: 42px;
 		@media screen and (max-width: 768px) {
@@ -38,7 +42,7 @@
 			}
 		}
 		& .type-cleaning {
-			@media screen and (max-width: 1140px) {
+			@media screen and (max-width: 1200px) {
 				flex-wrap: wrap;
 				grid-gap: 18px;
 			}
@@ -47,7 +51,7 @@
 				align-items: flex-start;
 			}
 			& > label {
-				@media screen and (max-width: 1140px) {
+				@media screen and (max-width: 1200px) {
 					flex: 0 1 calc(33.3333% - 12px);
 				}
 				@media screen and (max-width: 768px) {
@@ -76,7 +80,7 @@
 			}
 			& > label {
 				flex: 0 1 max(208px);
-				@media screen and (max-width: 1180px) {
+				@media screen and (max-width: 1200px) {
 					flex: 0 1 calc(25% - 18px);
 				}
 				& > span {

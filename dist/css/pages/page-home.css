@@ -64,19 +64,6 @@
   line-height: normal;
 }
 
-.container-xxxl {
-  max-width: 1440px;
-  --bs-gutter-x: 1.5rem;
-  --bs-gutter-y: 0;
-  width: 100%;
-  padding-right: -webkit-calc(var(--bs-gutter-x) * .5);
-  padding-right: calc(var(--bs-gutter-x) * .5);
-  padding-left: -webkit-calc(var(--bs-gutter-x) * .5);
-  padding-left: calc(var(--bs-gutter-x) * .5);
-  margin-right: auto;
-  margin-left: auto;
-}
-
 .header {
   display: -webkit-box;
   display: -webkit-flex;
@@ -169,7 +156,7 @@
   grid-gap: 26px;
   width: -webkit-calc(100% - 170px);
   width: calc(100% - 170px);
-  max-width: 1126px;
+  max-width: 370px;
 }
 
 .header-list {
@@ -359,6 +346,14 @@ input[type='number']::-webkit-inner-spin-button {
   /* <-- Apparently some margin are still there even though it's hidden */
 }
 
+#root {
+  display: none;
+}
+
+#root.active {
+  display: block;
+}
+
 .btn {
   --bs-btn-border-radius: 10px;
 }
@@ -382,6 +377,30 @@ li::marker {
 
 .btn-pink:active {
   --bs-btn-active-bg: #fdb7d6;
+  --bs-btn-active-color: #FEFEFE;
+  --bs-btn-active-border-color: transparent;
+}
+
+.btn-xxl {
+  --bs-btn-padding-x: 3rem;
+  --bs-btn-padding-y: 1.25rem;
+}
+
+.btn-pinkBig {
+  background-color: #FE308B;
+  color: #FEFEFE;
+  --bs-btn-font-size: 22px;
+  --bs-btn-font-weight: 700;
+  --bs-btn-line-height: normal;
+}
+
+.btn-pinkBig:hover {
+  background-color: #ff59a2;
+  color: #FEFEFE;
+}
+
+.btn-pinkBig:active {
+  --bs-btn-active-bg: #ff59a2;
   --bs-btn-active-color: #FEFEFE;
   --bs-btn-active-border-color: transparent;
 }
@@ -490,12 +509,17 @@ li::marker {
 .aside {
   position: -webkit-sticky;
   position: sticky;
-  top: 118px;
+  top: 130px;
   padding: 20px 16px;
   -webkit-border-radius: 20px;
           border-radius: 20px;
   -webkit-box-shadow: 0 0 10px 1px #E5E5E5;
           box-shadow: 0 0 10px 1px #E5E5E5;
+}
+
+.aside-bg {
+  width: 306px;
+  margin-left: 24px;
 }
 
 .aside-title {
@@ -542,6 +566,11 @@ li::marker {
 
 .aside-min-price {
   color: #E83034;
+}
+
+.calculator {
+  width: -webkit-calc(100% - 330px);
+  width: calc(100% - 330px);
 }
 
 .calculator-wrapper {
@@ -1373,7 +1402,7 @@ li::marker {
   padding: 1.852% 1.544%;
   -webkit-box-shadow: 0 0 10px 1px #EFEFEF;
           box-shadow: 0 0 10px 1px #EFEFEF;
-  height: 475px;
+  height: 440px;
 }
 
 .service-packages-list-item.active {
@@ -1390,10 +1419,6 @@ li::marker {
 }
 
 .service-packages-title {
-  -webkit-box-flex: 2;
-  -webkit-flex-grow: 2;
-      -ms-flex-positive: 2;
-          flex-grow: 2;
   margin-bottom: 10px;
   min-height: 76px;
   position: relative;
@@ -1810,14 +1835,30 @@ li::marker {
   }
 }
 
-@media screen and (max-width: 1180px) {
+@media screen and (max-width: 1200px) {
+  .calculator-wrapper .type-cleaning {
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    grid-gap: 18px;
+  }
+
+  .calculator-wrapper .type-cleaning > label {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 -webkit-calc(33.3333% - 12px);
+        -ms-flex: 0 1 calc(33.3333% - 12px);
+            flex: 0 1 calc(33.3333% - 12px);
+  }
+
   .calculator-wrapper .rooms > label {
     -webkit-box-flex: 0;
     -webkit-flex: 0 1 -webkit-calc(25% - 18px);
         -ms-flex: 0 1 calc(25% - 18px);
             flex: 0 1 calc(25% - 18px);
   }
+}
 
+@media screen and (max-width: 1180px) {
   .calculator-wrapper .additional-services.widthX2 > .additional-services-item {
     -webkit-box-flex: 0;
     -webkit-flex: 0 1 -webkit-calc(50% - 12px);
@@ -1837,22 +1878,6 @@ li::marker {
     -webkit-flex: 0 1 -webkit-calc(50% - 12px);
         -ms-flex: 0 1 calc(50% - 12px);
             flex: 0 1 calc(50% - 12px);
-  }
-}
-
-@media screen and (max-width: 1140px) {
-  .calculator-wrapper .type-cleaning {
-    -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-    grid-gap: 18px;
-  }
-
-  .calculator-wrapper .type-cleaning > label {
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 1 -webkit-calc(33.3333% - 12px);
-        -ms-flex: 0 1 calc(33.3333% - 12px);
-            flex: 0 1 calc(33.3333% - 12px);
   }
 }
 
@@ -2049,6 +2074,7 @@ li::marker {
     -webkit-flex: 0 1 -webkit-calc(33.3333% - 16px);
         -ms-flex: 0 1 calc(33.3333% - 16px);
             flex: 0 1 calc(33.3333% - 16px);
+    height: 425px;
   }
 
   .promo-list {
@@ -2156,6 +2182,15 @@ li::marker {
     font-size: 14px;
   }
 
+  .aside-bg {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .calculator {
+    width: 100%;
+  }
+
   .calculator-wrapper {
     margin-bottom: 32px;
   }
@@ -2234,7 +2269,7 @@ li::marker {
     -webkit-flex: 0 1 -webkit-calc(50% - 8px);
         -ms-flex: 0 1 calc(50% - 8px);
             flex: 0 1 calc(50% - 8px);
-    height: 450px;
+    height: 410px;
     padding: 18px 12px;
   }
 

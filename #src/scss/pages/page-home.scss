@@ -244,13 +244,14 @@
 			border-radius: 20px;
 			padding: 1.852% 1.544%;
 			box-shadow: 0 0 10px 1px #EFEFEF;
-			height: 475px;
+			height: 440px;
 			@media screen and (max-width: 1024px) {
 				flex: 0 1 calc(33.3333% - 16px);
+				height: 425px;
 			}
 			@media screen and (max-width: 768px) {
 				flex: 0 1 calc(50% - 8px);
-				height: 450px;
+				height: 410px;
 				padding: 18px 12px;
 			}
 			@media screen and (max-width: 580px) {
@@ -274,7 +275,6 @@
 	}
 
 	&-title {
-		flex-grow: 2;
 		margin-bottom: 10px;
 		min-height: 76px;
 		position: relative;

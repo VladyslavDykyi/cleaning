@@ -19,6 +19,12 @@ input[type='number']::-webkit-inner-spin-button {
 	-webkit-appearance: none;
 	margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
+#root {
+	display: none;
+	&.active {
+		display: block;
+	}
+}
 .btn {
 	--bs-btn-border-radius: 10px;
 }
@@ -37,6 +43,27 @@ li::marker {
 	}
 	&:active {
 		--bs-btn-active-bg: #fdb7d6;
+		--bs-btn-active-color: #FEFEFE;
+		--bs-btn-active-border-color: transparent;
+	}
+}
+
+.btn-xxl {
+	--bs-btn-padding-x: 3rem;
+	--bs-btn-padding-y: 1.25rem;
+}
+.btn-pinkBig {
+	background-color: $pink;
+	color: $white;
+	--bs-btn-font-size: 22px;
+	--bs-btn-font-weight: 700;
+	--bs-btn-line-height: normal;
+	&:hover {
+		background-color: #ff59a2;
+		color: $white;
+	}
+	&:active {
+		--bs-btn-active-bg: #ff59a2;
 		--bs-btn-active-color: #FEFEFE;
 		--bs-btn-active-border-color: transparent;
 	}

@@ -19,6 +19,14 @@ input[type='number']::-webkit-inner-spin-button {
   /* <-- Apparently some margin are still there even though it's hidden */
 }
 
+#root {
+  display: none;
+}
+
+#root.active {
+  display: block;
+}
+
 .btn {
   --bs-btn-border-radius: 10px;
 }
@@ -42,6 +50,30 @@ li::marker {
 
 .btn-pink:active {
   --bs-btn-active-bg: #fdb7d6;
+  --bs-btn-active-color: #FEFEFE;
+  --bs-btn-active-border-color: transparent;
+}
+
+.btn-xxl {
+  --bs-btn-padding-x: 3rem;
+  --bs-btn-padding-y: 1.25rem;
+}
+
+.btn-pinkBig {
+  background-color: #FE308B;
+  color: #FEFEFE;
+  --bs-btn-font-size: 22px;
+  --bs-btn-font-weight: 700;
+  --bs-btn-line-height: normal;
+}
+
+.btn-pinkBig:hover {
+  background-color: #ff59a2;
+  color: #FEFEFE;
+}
+
+.btn-pinkBig:active {
+  --bs-btn-active-bg: #ff59a2;
   --bs-btn-active-color: #FEFEFE;
   --bs-btn-active-border-color: transparent;
 }
@@ -147,19 +179,6 @@ li::marker {
   color: #597B00;
 }
 
-.container-xxxl {
-  max-width: 1440px;
-  --bs-gutter-x: 1.5rem;
-  --bs-gutter-y: 0;
-  width: 100%;
-  padding-right: -webkit-calc(var(--bs-gutter-x) * .5);
-  padding-right: calc(var(--bs-gutter-x) * .5);
-  padding-left: -webkit-calc(var(--bs-gutter-x) * .5);
-  padding-left: calc(var(--bs-gutter-x) * .5);
-  margin-right: auto;
-  margin-left: auto;
-}
-
 .header {
   display: -webkit-box;
   display: -webkit-flex;
@@ -252,7 +271,7 @@ li::marker {
   grid-gap: 26px;
   width: -webkit-calc(100% - 170px);
   width: calc(100% - 170px);
-  max-width: 1126px;
+  max-width: 370px;
 }
 
 .header-list {

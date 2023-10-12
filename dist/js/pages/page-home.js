@@ -8,32 +8,6 @@
 			document.querySelector('body').classList.toggle('lock');
 		}
 	});
-	document.addEventListener("DOMContentLoaded", function () {
-		const cityElement = document.querySelectorAll(".visitor-city");
-		// Виконуємо запит до API ipapi.co за допомогою Fetch
-		fetch("https://ipapi.co/json/")
-			.then(function (response) {
-				if (!response.ok) {
-					throw new Error("Помилка під час запиту до API ipinfo.io");
-				}
-				return response.json();
-			})
-			.then(function (data) {
-				// Вилучаємо інформацію про місто
-
-				const city = data.city;
-				// Вставляємо місто в HTML
-				cityElement.forEach(item => {
-					item.textContent = city;
-				});
-			})
-			.catch(function (error) {
-				console.error(error);
-				cityElement.forEach(item => {
-					item.textContent = "EROR";
-				});
-			});
-	});
 	const swiper = new Swiper(".mySwiper1", {
 		slidesPerView: 1,
 		centeredSlidesBounds: true,
@@ -79,4 +53,27 @@
 		const item = e.target.closest('.service-packages-list-item').classList.toggle('active');
 		console.log(item);
 	});
+	const btnCalculator = document.querySelector('#calculBtn');
+	btnCalculator.addEventListener('click',(event) => {
+		const calculator = document.querySelector('#root');
+		calculator.classList.toggle('active');
+	});
+	const links = document.querySelectorAll('a[href^="#"]');
+
+	for (const link of links) {
+		link.addEventListener('click', function (e) {
+			e.preventDefault();
+			const targetId = this.getAttribute('href').substring(1); // Извлекаем id целевого элемента
+			const targetElement = document.getElementById(targetId);
+			const headerHeight = document.querySelector('header').offsetHeight; // Высота хедера
+
+			if (targetElement) {
+				const targetOffset = targetElement.offsetTop - headerHeight;
+				window.scrollTo({
+					top: targetOffset,
+					behavior: 'smooth' // Добавить плавную прокрутку (по желанию)
+				});
+			}
+		});
+	}
 })();

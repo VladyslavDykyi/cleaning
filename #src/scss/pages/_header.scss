@@ -1,14 +1,5 @@
 @import '../default/_my__color';
-.container-xxxl{
-	max-width: 1440px;
-	--bs-gutter-x: 1.5rem;
-	--bs-gutter-y: 0;
-	width: 100%;
-	padding-right: calc(var(--bs-gutter-x) * .5);
-	padding-left: calc(var(--bs-gutter-x) * .5);
-	margin-right: auto;
-	margin-left: auto;
-}
+
 .header {
 	display: flex;
 	align-items: center;
@@ -79,7 +70,7 @@
 		justify-content: space-between;
 		grid-gap: 26px;
 		width: calc(100% - 170px);
-		max-width: 1126px;
+		max-width: 370px;
 		@media screen and (max-width: 1210px) {
 			width: calc(100% - 126px);
 			grid-gap: 12px;
