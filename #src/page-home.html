@@ -21,7 +21,11 @@
 
 @@include('./html/_header.html')
 <main class="wrapper flex-grow-1">
+
 	@@include('./html/_page-home.html')
+	<button type="button" class="btn btn-pink" data-bs-toggle="modal" data-bs-target="#exampleModal">
+		Замовити
+	</button>
 	@@include('./html/_page-calculator.html')
 	@@include('./html/_page-our-model.html')
 	@@include('./html/_page-service-packages.html')
@@ -33,6 +37,29 @@
 
 	@@include('./html/_page-home-FAQ.html')
 	@@include('./html/_page-works-reviews.html')
+
+	<div  class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<div class="row align-items-center">
+						<div class="col-6 left-modal">
+							<h2 class="title-modal t-bold t-2 ">
+								Дякуєм за замовлення
+							</h2>
+						</div>
+						<div class="col-6 right-modal">
+							<img class="img-girl-modal" src="../img/qweqwe.png" alt="">
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer"></div>
+			</div>
+		</div>
+	</div>
 </main>
 @@include('./html/_footer.html')
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
@@ -40,5 +67,6 @@
 		integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
 		crossorigin="anonymous"></script>
 <script src="./js/pages/page-home.js"></script>
+<script src="./js/pages/API.js"></script>
 </body>
 </html>

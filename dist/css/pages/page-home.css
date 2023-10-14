@@ -506,6 +506,63 @@ li::marker {
   color: #597B00;
 }
 
+.modal-dialog {
+  --bs-modal-width: 1320px;
+}
+
+.btn-close {
+  background: transparent url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30' fill='none'%3e%3cpath d='M6.37658 6.37658C6.87868 5.87447 7.69275 5.87447 8.19485 6.37658L15 13.1817L21.8051 6.37658C22.3073 5.87447 23.1213 5.87447 23.6234 6.37658C24.1255 6.87868 24.1255 7.69275 23.6234 8.19485L16.8183 15L23.6234 21.8051C24.1255 22.3073 24.1255 23.1213 23.6234 23.6234C23.1213 24.1255 22.3073 24.1255 21.8051 23.6234L15 16.8183L8.19485 23.6234C7.69275 24.1255 6.87868 24.1255 6.37658 23.6234C5.87447 23.1213 5.87447 22.3073 6.37658 21.8051L13.1817 15L6.37658 8.19485C5.87447 7.69275 5.87447 6.87868 6.37658 6.37658Z' fill='%23FEFEFE'/%3e%3c/svg%3e") center/1em auto no-repeat;
+  background-size: 30px 30px;
+}
+
+.modal-header {
+  border-bottom-color: transparent;
+}
+
+.modal-body {
+  color: #FEFEFE;
+  min-height: 500px;
+  width: 100%;
+  padding-bottom: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.modal-body > div {
+  width: 100%;
+}
+
+.img-girl-modal {
+  position: absolute;
+  bottom: -51px;
+  right: 110px;
+  width: 50%;
+  height: auto;
+}
+
+.title-modal {
+  text-align: center;
+}
+
+.modal-footer {
+  height: 51px;
+  border-top-color: transparent;
+}
+
+.modal-content {
+  --bs-modal-bg: #92C303;
+}
+
 .aside {
   position: -webkit-sticky;
   position: sticky;
@@ -632,6 +689,10 @@ li::marker {
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
   grid-gap: 12px;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 .calculator-wrapper .numberBathRooms > label,
@@ -644,10 +705,10 @@ li::marker {
 
 .calculator-wrapper .numberBathRooms > .input,
 .calculator-wrapper .numberRooms > .input {
-  -webkit-box-flex: 0;
-  -webkit-flex: 0 1 306px;
-      -ms-flex: 0 1 306px;
-          flex: 0 1 306px;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 2 auto;
+      -ms-flex: 1 2 auto;
+          flex: 1 2 auto;
 }
 
 .calculator-wrapper .total-square-footage {
@@ -1964,6 +2025,10 @@ li::marker {
     padding: 8px 10px;
   }
 
+  .aside {
+    top: 155px;
+  }
+
   .calculator-wrapper .calendar-time {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -2099,6 +2164,14 @@ li::marker {
 @media screen and (max-width: 998px) {
   .t-1 {
     font-size: 42px;
+  }
+
+  .modal-body {
+    min-height: 300px;
+  }
+
+  .img-girl-modal {
+    right: 0;
   }
 }
 
@@ -2324,6 +2397,10 @@ li::marker {
 }
 
 @media screen and (max-width: 580px) {
+  .modal-body {
+    min-height: 200px;
+  }
+
   .first-block {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -2452,10 +2529,6 @@ li::marker {
 
   .calculator-wrapper .numberBathRooms,
   .calculator-wrapper .numberRooms {
-    -webkit-box-pack: start;
-    -webkit-justify-content: flex-start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
     grid-gap: 8px;
   }
 
@@ -2465,14 +2538,6 @@ li::marker {
     -webkit-flex: 0 1 49px;
         -ms-flex: 0 1 49px;
             flex: 0 1 49px;
-  }
-
-  .calculator-wrapper .numberBathRooms > .input,
-  .calculator-wrapper .numberRooms > .input {
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 1 -webkit-calc(100% - 57px);
-        -ms-flex: 0 1 calc(100% - 57px);
-            flex: 0 1 calc(100% - 57px);
   }
 
   .calculator-wrapper .total-square-footage {
@@ -2629,6 +2694,20 @@ li::marker {
 
   .textarea > textarea::placeholder {
     font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .modal-body {
+    min-height: 150px;
+  }
+
+  .img-girl-modal {
+    display: none;
+  }
+
+  .left-modal {
+    width: 100%;
   }
 }
 

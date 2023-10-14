@@ -99,8 +99,9 @@
 		& .numberRooms {
 			flex-wrap: wrap;
 			grid-gap: 12px;
+			justify-content: flex-start;
 			@media screen and (max-width: 576px) {
-				justify-content: flex-start;
+
 				grid-gap: 8px;
 			}
 			& > label {
@@ -110,10 +111,7 @@
 				}
 			}
 			& > .input {
-				flex: 0 1 max(306px);
-				@media screen and (max-width: 576px) {
-					flex: 0 1 calc(100% - 57px);
-				}
+				flex: 1 2 auto;
 			}
 		}
 		& .total-square-footage {

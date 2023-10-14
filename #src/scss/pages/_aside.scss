@@ -8,6 +8,9 @@
 	padding: 20px 16px;
 	border-radius: 20px;
 	box-shadow: 0 0 10px 1px #E5E5E5;
+	@media screen and (max-width: 1024px) {
+		top: 155px;
+	}
 	&-bg {
 		width: 306px;
 		margin-left: 24px;
