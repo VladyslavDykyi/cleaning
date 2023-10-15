@@ -1,7 +1,50 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 	// Функция для получения данных из Laravel API
 
-	(()=>{
+	(() => {
+		function fetchServicePackagesAPI2() {
+			fetch('http://clean.webgenerator.com.ua/api/v1/service-packages/all')
+				.then(response => response.json())
+				.then(data => {
+					const servicePackagesList = document.querySelector('.service-packages-list');
+					data.data.forEach(item => {
+						const wrapper = document.createElement('li');
+						wrapper.classList.add('service-packages-list-item');
+						wrapper.innerHTML = `<h5 class="service-packages-title t-bold t-4">
+							${item.name} 
+							<span class="service-packages-frequency t-s-bold t-8">
+							${item.period}
+							</span>
+						</h5>
+						<button class="btn btn-pink" type="button">
+							Замовити
+						</button>
+						<h6 class="service-packages-el-title t-bold t-7">
+							${item.elements}
+						</h6>
+						<div class="wrapper-info">
+							<ul class="service-packages-elements">
+							</ul>
+							<button class="text-wrap reset-btn t-bold" type="button">
+							Більше
+							</button>
+						</div>`
+						const ul = wrapper.querySelector('.service-packages-elements');
+						item.list.forEach(item => {
+							const wrapperEl = document.createElement('li');
+							wrapperEl.classList.add('service-packages-element','t-7');
+							wrapperEl.textContent = `${item}`
+							ul.append(wrapperEl);
+						})
+						servicePackagesList.append(wrapper)
+					})
+				})
+				.catch(error => {
+					console.error("Помилка при завантаженні данних: ", error);
+				});
+		}
+		fetchServicePackagesAPI2()
+
 		function fetchAdditionalFromAPI() {
 			fetch('http://clean.webgenerator.com.ua/api/v1/extra-services/all')
 				.then(response => response.json())
@@ -25,7 +68,9 @@ document.addEventListener('DOMContentLoaded', function() {
 					console.error("Помилка при завантаженні данних: ", error);
 				});
 		}
+
 		fetchAdditionalFromAPI();
+
 		function fetchFaqsFromAPI() {
 			fetch('http://clean.webgenerator.com.ua/api/v1/faqs/all')
 				.then(response => response.json())
@@ -73,7 +118,9 @@ document.addEventListener('DOMContentLoaded', function() {
 					console.error("Помилка при завантаженні данних: ", error);
 				});
 		}
+
 		fetchFaqsFromAPI();
+
 		function fetchReviewsFromAPI() {
 			fetch('http://clean.webgenerator.com.ua/api/v1/reviews/all')
 				.then(response => response.json())
@@ -83,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
 						let reviewItem = document.createElement('li');
 						reviewItem.classList.add('swiper-slide', 'works-reviews-list-item');
 
-						if(review.media){
+						if (review.media) {
 							let images_wrap = document.createElement('div');
 							images_wrap.classList.add('works-reviews-img');
 
@@ -95,11 +142,11 @@ document.addEventListener('DOMContentLoaded', function() {
 						}
 
 						let orderName_h3 = document.createElement('h3');
-						orderName_h3.classList.add('text-center', 't-bold','t-4');
+						orderName_h3.classList.add('text-center', 't-bold', 't-4');
 						orderName_h3.textContent = review.orderName;
 
 						let username_h5 = document.createElement('h5');
-						username_h5.classList.add('text-center', 't-bold','t-4');
+						username_h5.classList.add('text-center', 't-bold', 't-4');
 						username_h5.textContent = review.username;
 
 						let review_p = document.createElement('p');
@@ -126,7 +173,10 @@ document.addEventListener('DOMContentLoaded', function() {
 		function createPictureElement(src) {
 			let picture = document.createElement('picture');
 			let source = document.createElement('source');
-			Object.entries({ type: "image/webp", "srcset": src }).forEach(([key, value]) => source.setAttribute(key, value));
+			Object.entries({
+				type: "image/webp",
+				"srcset": src
+			}).forEach(([key, value]) => source.setAttribute(key, value));
 			picture.appendChild(source);
 
 			let img = document.createElement('img');
@@ -137,7 +187,3 @@ document.addEventListener('DOMContentLoaded', function() {
 		}
 	})();
 });
-// setTimeout(()=> {
-//     const btn = document.querySelector('#padaras');
-//     console.log(btn,'1111111111111111111111111');
-// },1000)
