@@ -1,8 +1,6 @@
 @import '../default/_my__color';
 
 .footer {
-	&-container {
-	}
 	&-top {
 		border-top: 1px solid $lines;
 		padding: 24px 0 15px;
@@ -61,7 +59,7 @@
 				}
 			}
 			& .pink {
-				color: $pink;
+				color: #597B00;
 			}
 		}
 	}

@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
 					console.error("Помилка при завантаженні данних: ", error);
 				});
 		}
-		fetchServicePackagesAPI2()
+		// fetchServicePackagesAPI2()
 
 		function fetchAdditionalFromAPI() {
 			fetch('http://clean.webgenerator.com.ua/api/v1/extra-services/all')

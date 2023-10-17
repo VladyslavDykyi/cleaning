@@ -6,7 +6,6 @@
 	justify-content: space-between;
 	@media screen and (max-width: 1024px) {
 		flex-wrap: wrap;
-		grid-gap: 20px;
 		padding-right: 0;
 	}
 	&.active {
@@ -38,12 +37,18 @@
 			align-items: center;
 			justify-content: center;
 		}
+		& svg {
+			@media screen and (max-width: 480px) {
+				width: 24px;
+				height: 24px;
+			}
+		}
 	}
 	& .close-icon {
 		display: none;
 	}
 	&-bg {
-		background-color: $white;
+		background-color: #F7F7F7;
 		padding: 14px 0 13px;
 		position: fixed;
 		top: 0;
@@ -57,34 +62,26 @@
 			margin-right: 12px;
 		}
 		& img {
-			width: 144px;
+			width: 67px;
 			height: auto;
-			@media screen and (max-width: 1210px) {
-				width: 114px;
+			@media screen and (max-width: 768px) {
+				width: 31px;
 			}
 		}
 	}
 	&-mob {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		grid-gap: 26px;
+
 		width: calc(100% - 170px);
-		max-width: 370px;
+		max-width: 624px;
 		@media screen and (max-width: 1210px) {
 			width: calc(100% - 126px);
-			grid-gap: 12px;
 		}
 		@media screen and (max-width: 1024px) {
 			display: none;
 			width: 100%;
 			max-width: 100%;
 			align-items: flex-start;
-		}
-	}
-	& .wrapper-social {
-		@media screen and (max-width: 1024px) {
-			flex: 0 1 100%;
+			margin-top: 20px;
 		}
 	}
 	&-list {
@@ -93,7 +90,7 @@
 		justify-content: space-between;
 		list-style-type: none;
 		width: 100%;
-		grid-gap: 6px;
+		grid-gap: 10px;
 		padding-left: 0;
 		margin-bottom: 0;
 		@media screen and (max-width: 1024px) {
@@ -109,13 +106,15 @@
 				text-decoration: none;
 				color: $black;
 				text-align: center;
-				font-size: 16px;
+				font-size: 14px;
 				font-weight: 500;
 				line-height: normal;
 				display: flex;
+				align-items: center;
 				flex-direction: column;
-				grid-gap: 7px;
+				grid-gap: 8px;
 				border-radius: 2px;
+				white-space: nowrap;
 				@media screen and (max-width: 1240px) {
 					font-size: 12px;
 				}

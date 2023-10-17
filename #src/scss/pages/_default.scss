@@ -5,7 +5,7 @@ body {
 	font-weight: 500;
 	line-height: normal;
 	color: $black;
-	background-color: $white;
+	background-color: #F7F7F7;
 	@media screen and (max-width: 768px) {
 		font-size: 14px;
 	}
@@ -32,17 +32,17 @@ li::marker {
 	color: $black;
 }
 .btn-pink {
-	background-color: $pink-light;
+	background-color: #597B00;
 	color: $white;
 	--bs-btn-font-size: 18px;
 	--bs-btn-font-weight: 500;
 	--bs-btn-line-height: normal;
 	&:hover {
-		background-color: #ff9dc9;
+		background-color: #79a012;
 		color: $white;
 	}
 	&:active {
-		--bs-btn-active-bg: #fdb7d6;
+		--bs-btn-active-bg: #79a012;
 		--bs-btn-active-color: #FEFEFE;
 		--bs-btn-active-border-color: transparent;
 	}
@@ -53,17 +53,17 @@ li::marker {
 	--bs-btn-padding-y: 1.25rem;
 }
 .btn-pinkBig {
-	background-color: $pink;
+	background-color: #E98D04;
 	color: $white;
 	--bs-btn-font-size: 22px;
 	--bs-btn-font-weight: 700;
 	--bs-btn-line-height: normal;
 	&:hover {
-		background-color: #ff59a2;
+		background-color: #e69c2c;
 		color: $white;
 	}
 	&:active {
-		--bs-btn-active-bg: #ff59a2;
+		--bs-btn-active-bg: #e69c2c;
 		--bs-btn-active-color: #FEFEFE;
 		--bs-btn-active-border-color: transparent;
 	}
@@ -74,15 +74,15 @@ li::marker {
 	padding: 0;
 }
 :root {
-	--swiper-theme-color: #83B100;
+	--swiper-theme-color: #28674F;
 }
 .social {
 	display: flex;
 	align-items: center;
-	background-color: $pink-light;
+	background-color: #597B00;
 	border-radius: 14px;
 	padding: 20px 8px;
-	color: $white;
+	color: #FFFEF9;
 	width: 420px;
 	margin-right: 16px;
 	@media screen and (max-width: 1210px) {
@@ -94,7 +94,7 @@ li::marker {
 		width: 100%;
 		max-width: 376px;
 		margin: 0 auto;
-		padding: 8px 10px;
+		padding: 8px 6px;
 	}
 	@media screen and (max-width: 425px) {
 		max-width: 100%;
@@ -120,7 +120,7 @@ li::marker {
 		text-decoration: none;
 		display: block;
 		border-radius: 50%;
-		color: $white;
+		color: #FFFEF9;
 		margin-right: 8px;
 		@media screen and (max-width: 1210px) {
 			font-size: 14px;
@@ -162,7 +162,7 @@ li::marker {
 			width: 24px;
 			height: 24px;
 			display: block;
-			border: 2px solid $accent;
+			border: 2px solid #597B00;
 			border-radius: 3px;
 			cursor: pointer;
 		}
