@@ -72,7 +72,27 @@
 					top: targetOffset,
 					behavior: 'smooth' // Добавить плавную прокрутку (по желанию)
 				});
+				if(targetElement.id === 'root') {
+					targetElement.classList.add('active');
+				}
 			}
 		});
 	}
+	$('.telMask').inputmask('+38 (099) 999-99-99');
+
+	const scrollButton = document.querySelector('.service-packages-list');
+	const targetElement = document.querySelector('#root');
+
+	scrollButton.addEventListener('click', function (e) {
+		// Використовуємо метод scrollIntoView для прокручування до цільового елемента
+		if(!e.target.classList.contains('btn-pinkBig')) return
+		if (targetElement.contains('active')) targetElement.classList.add('active');
+		const headerHeight = document.querySelector('header').offsetHeight;
+		window.scrollTo({
+			top: targetElement.offsetTop - headerHeight,
+			behavior: 'smooth',
+		});
+
+	});
+
 })();

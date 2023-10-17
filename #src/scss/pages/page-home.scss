@@ -11,7 +11,7 @@
 
 .first-block {
 	display: flex;
-	padding: 221px 0 148px;
+	padding: 221px 0 121px;
 	margin-bottom: 100px;
 	@media screen and (max-width: 1024px) {
 		padding: 168px 0 100px;
@@ -32,11 +32,15 @@
 		background-repeat: no-repeat;
 		background-position: center top;
 		background-size: cover;
+		background-color: #e2e2e2;
 		width: 100%;
 		padding: 33px 60px 144px;
 		border-radius: 16px;
 		@media screen and (max-width: 768px) {
-			padding: 187px 14px 106px;
+			max-width: 420px;
+			margin: 0 auto;
+			padding: 16px 12px 91px;
+			border-radius: 18px;
 			background-image: url("../../img/bg-2mob.png");
 		}
 		&-services {
@@ -46,14 +50,13 @@
 			grid-gap: 8px;
 			margin-bottom: 10px;
 			@media screen and (max-width: 768px) {
-				display: none;
 			}
 		}
 		&-name {
 			color: $white;
 			margin-bottom: 50px;
 			@media screen and (max-width: 768px) {
-				display: none;
+				margin-bottom: 100px;
 			}
 		}
 		&-text {
@@ -83,15 +86,23 @@
 			white-space: nowrap;
 			@media screen and (max-width: 768px) {
 				font-size: 14px;
+				flex-direction: column;
+				margin-bottom: 24px;
 			}
 			& .input {
 				flex: 2 2 auto;
 				margin-left: auto;
+				@media screen and (max-width: 768px) {
+					width: 100%;
+				}
 				& > input {
 					background-color: transparent;
 					color: $white;
 					border-color: $white;
-
+					@media screen and (max-width: 768px) {
+						width: 100%;
+						height: 57px;
+					}
 					&::placeholder {
 						color: $white;
 					}
@@ -148,28 +159,30 @@
 		display: flex;
 		align-items: flex-start;
 		flex-wrap: wrap;
-		grid-gap: 33px;
+		grid-gap: 20px;
 		padding-left: 0;
 		margin-bottom: 0;
 		list-style-type: none;
-		@media screen and (max-width: 1024px) {
-			grid-gap: 24px;
-		}
+
 		@media screen and (max-width: 768px) {
 			grid-gap: 16px;
 		}
 
 		&-item {
-			flex: 0 1 calc(23% - 10px);
+			flex: 0 1 calc(25% - 15px);
 			border-radius: 16px;
 			background: #FFF;
 			padding: 20px;
 			box-shadow: 0 0 8px 0 #D7D7D7;
-			//height: 635px;
 			&.active {
 				height: 100%;
 			}
-
+			@media screen and (max-width: 1024px) {
+				flex: 0 1 calc(50% - 10px);
+			}
+			@media screen and (max-width: 520px) {
+				flex: 0 1 100%;
+			}
 		}
 	}
 	&-img {
