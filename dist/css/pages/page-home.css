@@ -1462,6 +1462,9 @@ li::marker {
 .service-packages-img {
   width: 100%;
   height: auto;
+  -webkit-border-radius: 8px;
+          border-radius: 8px;
+  max-height: 182px;
 }
 
 .service-packages-name {

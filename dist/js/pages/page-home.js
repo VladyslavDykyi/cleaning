@@ -86,13 +86,11 @@
 	scrollButton.addEventListener('click', function (e) {
 		// Використовуємо метод scrollIntoView для прокручування до цільового елемента
 		if(!e.target.classList.contains('btn-pinkBig')) return
-		if (targetElement.contains('active')) targetElement.classList.add('active');
+		if (targetElement.classList.contains('active')) targetElement.classList.add('active');
 		const headerHeight = document.querySelector('header').offsetHeight;
 		window.scrollTo({
 			top: targetElement.offsetTop - headerHeight,
 			behavior: 'smooth',
 		});
-
 	});
-
 })();
