@@ -57,40 +57,42 @@
 		const calculator = document.querySelector('#root');
 		calculator.classList.toggle('active');
 	});
-	const links = document.querySelectorAll('a[href^="#"]');
-
-	for (const link of links) {
-		link.addEventListener('click', function (e) {
-			e.preventDefault();
-			const targetId = this.getAttribute('href').substring(1); // Извлекаем id целевого элемента
-			const targetElement = document.getElementById(targetId);
-			const headerHeight = document.querySelector('header').offsetHeight; // Высота хедера
-
-			if (targetElement) {
-				const targetOffset = targetElement.offsetTop - headerHeight;
-				window.scrollTo({
-					top: targetOffset,
-					behavior: 'smooth' // Добавить плавную прокрутку (по желанию)
-				});
-				if(targetElement.id === 'root') {
-					targetElement.classList.add('active');
+	document.addEventListener('DOMContentLoaded', function () {
+		const links = document.querySelectorAll('a[href^="#"]');
+	
+		for (const link of links) {
+			link.addEventListener('click', function (e) {
+				e.preventDefault();
+				const targetId = this.getAttribute('href').substring(1); // Извлекаем id целевого элемента
+				const targetElement = document.getElementById(targetId);
+				const headerHeight = document.querySelector('header').offsetHeight; // Высота хедера
+				console.log(targetElement.offsetTop,'1111111111');
+				if (targetElement) {
+					if(targetElement.id === 'root') targetElement.classList.add('active');
+					const targetOffset = targetElement.offsetTop - headerHeight;
+					window.scrollTo({
+						top: targetOffset,
+						behavior: 'smooth', // Добавить плавную прокрутку (по желанию)
+					});
 				}
-			}
-		});
-	}
+			});
+		}
+	});
 	$('.telMask').inputmask('+38 (099) 999-99-99');
 
-	const scrollButton = document.querySelector('.service-packages-list');
-	const targetElement = document.querySelector('#root');
-
-	scrollButton.addEventListener('click', function (e) {
-		// Використовуємо метод scrollIntoView для прокручування до цільового елемента
-		if(!e.target.classList.contains('btn-pinkBig')) return
-		if (targetElement.classList.contains('active')) targetElement.classList.add('active');
-		const headerHeight = document.querySelector('header').offsetHeight;
-		window.scrollTo({
-			top: targetElement.offsetTop - headerHeight,
-			behavior: 'smooth',
-		});
+	document.addEventListener('DOMContentLoaded', function () {
+			const scrollButton = document.querySelector('.service-packages-list');
+			const targetElement = document.querySelector('#root');
+			scrollButton.addEventListener('click', function (e) {
+				// Використовуємо метод scrollIntoView для прокручування до цільового елемента
+				if(!e.target.classList.contains('btn-pinkBig')) return
+				if (!targetElement.classList.contains('active')) targetElement.classList.add('active');
+				const headerHeight = document.querySelector('header').offsetHeight;
+				console.log(targetElement.offsetTop)
+				window.scrollTo({
+					top: targetElement.offsetTop - headerHeight,
+					behavior: 'smooth',
+				});
+			});
 	});
 })();

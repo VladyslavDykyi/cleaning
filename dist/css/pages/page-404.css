@@ -266,7 +266,7 @@ li::marker {
   padding-left: 66px;
 }
 
-.left-modal form {
+.left-modal .form {
   margin-top: 40px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -279,7 +279,7 @@ li::marker {
   display: flex;
 }
 
-.left-modal form > * {
+.left-modal .form > * {
   margin-bottom: 16px;
 }
 

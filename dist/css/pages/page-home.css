@@ -585,7 +585,7 @@ li::marker {
   padding-left: 66px;
 }
 
-.left-modal form {
+.left-modal .form {
   margin-top: 40px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -598,7 +598,7 @@ li::marker {
   display: flex;
 }
 
-.left-modal form > * {
+.left-modal .form > * {
   margin-bottom: 16px;
 }
 
@@ -1461,10 +1461,9 @@ li::marker {
 
 .service-packages-img {
   width: 100%;
-  height: auto;
   -webkit-border-radius: 8px;
           border-radius: 8px;
-  max-height: 182px;
+  height: 182px;
   -o-object-fit: cover;
      object-fit: cover;
 }
