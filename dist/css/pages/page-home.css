@@ -1465,6 +1465,8 @@ li::marker {
   -webkit-border-radius: 8px;
           border-radius: 8px;
   max-height: 182px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .service-packages-name {

@@ -37,18 +37,18 @@ document.addEventListener('DOMContentLoaded', function () {
                 </a>
           </div>`;
 						const ul = wrapper.querySelector('.service-packages-dop');
-						item.list_false.forEach(liTrue => {
+						item.list_false.forEach(liFalse => {
 							const wrapperLi = document.createElement('li');
 							wrapperLi.classList.add('service-packages-dop-item');
 							wrapperLi.innerHTML = `<i class="bi bi-x-circle-fill"></i>
-                <span>${item}</span>`;
+                <span>${liFalse}</span>`;
 							ul.prepend(wrapperLi);
 						})
 						item.list_true.forEach(liTrue => {
 							const wrapperLi = document.createElement('li');
 							wrapperLi.classList.add('service-packages-dop-item');
 							wrapperLi.innerHTML = `<i class="bi bi-check-circle-fill"></i>
-                <span>${item}</span>`;
+                <span>${liTrue}</span>`;
 							ul.prepend(wrapperLi);
 						})
 						servicePackagesList.append(wrapper);
