@@ -2,48 +2,63 @@ document.addEventListener('DOMContentLoaded', function () {
 	// Функция для получения данных из Laravel API
 
 	(() => {
-		function fetchServicePackagesAPI2() {
+		function fetchServicePackagesAPI3() {
 			fetch('http://clean.webgenerator.com.ua/api/v1/service-packages/all')
 				.then(response => response.json())
 				.then(data => {
+					console.log(data);
 					const servicePackagesList = document.querySelector('.service-packages-list');
 					data.data.forEach(item => {
 						const wrapper = document.createElement('li');
 						wrapper.classList.add('service-packages-list-item');
-						wrapper.innerHTML = `<h5 class="service-packages-title t-bold t-4">
-							${item.name} 
-							<span class="service-packages-frequency t-s-bold t-8">
-							${item.period}
-							</span>
-						</h5>
-						<button class="btn btn-pink" type="button">
-							Замовити
-						</button>
-						<h6 class="service-packages-el-title t-bold t-7">
-							${item.elements}
-						</h6>
-						<div class="wrapper-info">
-							<ul class="service-packages-elements">
-							</ul>
-							<button class="text-wrap reset-btn t-bold" type="button">
-							Більше
-							</button>
-						</div>`
-						const ul = wrapper.querySelector('.service-packages-elements');
-						item.list.forEach(item => {
-							const wrapperEl = document.createElement('li');
-							wrapperEl.classList.add('service-packages-element','t-7');
-							wrapperEl.textContent = `${item}`
-							ul.append(wrapperEl);
+						wrapper.innerHTML = `<picture>
+                <source srcSet="${item.img}" type="image/webp">
+                <img class="service-packages-img" src="${item.img}" alt="">
+              </picture>
+              <h3 class="service-packages-title t-medium t-6">
+                ${item.name}
+              </h3>
+              <h4 class="service-packages-name t-bold t-7">
+                ${item.room}
+              </h4>
+              <ul class="service-packages-dop">
+                <li class="service-packages-dop-btn">
+                  <button class="btn-read-full" type="button"></button>
+                </li>
+              </ul>
+              <div class="service-packages-btn-wrapper">
+                <button class="btn btn-pink" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal5">
+                  Замовити
+                </button>
+              </div>
+            <div class="service-packages-btn-wrapper">
+                <a class="btn btn-pinkBig"  href="#root">
+                  Розрахувати
+                </a>
+          </div>`;
+						const ul = wrapper.querySelector('.service-packages-dop');
+						item.list_false.forEach(liTrue => {
+							const wrapperLi = document.createElement('li');
+							wrapperLi.classList.add('service-packages-dop-item');
+							wrapperLi.innerHTML = `<i class="bi bi-x-circle-fill"></i>
+                <span>${item}</span>`;
+							ul.prepend(wrapperLi);
 						})
-						servicePackagesList.append(wrapper)
+						item.list_true.forEach(liTrue => {
+							const wrapperLi = document.createElement('li');
+							wrapperLi.classList.add('service-packages-dop-item');
+							wrapperLi.innerHTML = `<i class="bi bi-check-circle-fill"></i>
+                <span>${item}</span>`;
+							ul.prepend(wrapperLi);
+						})
+						servicePackagesList.append(wrapper);
 					})
 				})
 				.catch(error => {
 					console.error("Помилка при завантаженні данних: ", error);
 				});
 		}
-		// fetchServicePackagesAPI2()
+		fetchServicePackagesAPI3();
 
 		function fetchAdditionalFromAPI() {
 			fetch('http://clean.webgenerator.com.ua/api/v1/extra-services/all')
