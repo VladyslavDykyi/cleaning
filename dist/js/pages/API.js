@@ -3,24 +3,26 @@ document.addEventListener('DOMContentLoaded', function () {
 	(() => {
 		function fetchCallBackTeam() {
 			const backendUrl = 'http://clean.webgenerator.com.ua/api/v1/job_applicant_callback'; // Замените на реальный URL вашего бекенда
-			const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-			const dataTel = document.querySelector('#phoneInputTeam');
-			const dataName = document.querySelector('#nameTeam');
 			const btn = document.querySelector('#exampleModal4 .btn.btn-xxl.btn-orange');
-			const data = {
-				name: dataName.value,
-				tel: dataTel.value,
-			}
-			const requestOptions = {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-					'X-CSRF-Token': csrfToken,
-				},
-				body: JSON.stringify(data),
-			};
 			// Выполните запрос с использованием fetch
 			btn.addEventListener('click',() => {
+				const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+				const dataTel = document.querySelector('#phoneInputTeam');
+				const dataName = document.querySelector('#nameTeam');
+				const data = {
+					name: dataName.value,
+					phone: dataTel.value,
+					_token: csrfToken,
+
+				}
+				const requestOptions = {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+						'X-CSRF-Token': csrfToken,
+					},
+					body: JSON.stringify(data),
+				};
 				fetch(backendUrl, requestOptions)
 					.then((response) => {
 						if (!response.ok) {
@@ -69,24 +71,25 @@ document.addEventListener('DOMContentLoaded', function () {
 		fetchCallBackTeam();
 		function fetchCallBackCall() {
 			const backendUrl = 'http://clean.webgenerator.com.ua/api/v1/customer_callback'; // Замените на реальный URL вашего бекенда
-			const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-			const dataTel = document.querySelector('#phoneInputTeam2');
-			const dataName = document.querySelector('#nameTeam2');
 			const btn = document.querySelector('#exampleModal5 .btn.btn-xxl.btn-orange');
-			const data = {
-				name: dataName.value,
-				tel: dataTel.value,
-			}
-			const requestOptions = {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-					'X-CSRF-Token': csrfToken,
-				},
-				body: JSON.stringify(data),
-			};
 			// Выполните запрос с использованием fetch
 			btn.addEventListener('click',() => {
+				const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+				const dataTel = document.querySelector('#phoneInputTeam2');
+				const dataName = document.querySelector('#nameTeam2');
+				const data = {
+					name: dataName.value,
+					phone: dataTel.value,
+					_token: csrfToken,
+				}
+				const requestOptions = {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+						'X-CSRF-Token': csrfToken,
+					},
+					body: JSON.stringify(data),
+				};
 				fetch(backendUrl, requestOptions)
 					.then((response) => {
 						if (!response.ok) {
@@ -213,9 +216,9 @@ document.addEventListener('DOMContentLoaded', function () {
 					console.error("Помилка при завантаженні данних: ", error);
 				});
 		}
-		
+
 		fetchPromo();
-		
+
 		function fetchAdditionalFromAPI () {
 			fetch('http://clean.webgenerator.com.ua/api/v1/extra-services/all')
 				.then(response => response.json())
@@ -239,9 +242,9 @@ document.addEventListener('DOMContentLoaded', function () {
 					console.error("Помилка при завантаженні данних: ", error);
 				});
 		}
-		
+
 		fetchAdditionalFromAPI();
-		
+
 		function fetchFaqsFromAPI () {
 			fetch('http://clean.webgenerator.com.ua/api/v1/faqs/all')
 				.then(response => response.json())
@@ -250,7 +253,7 @@ document.addEventListener('DOMContentLoaded', function () {
 					data.data.forEach(faq => {
 						let faqItem = document.createElement('div');
 						faqItem.classList.add('accordion-item');
-						
+
 						let question_wrap = document.createElement('h2');
 						question_wrap.classList.add('accordion-header');
 						question_wrap.setAttribute('id', "flush-heading" + faq.id);
@@ -266,7 +269,7 @@ document.addEventListener('DOMContentLoaded', function () {
 						question_button.textContent = faq.question;
 						question_wrap.appendChild(question_button);
 						faqItem.appendChild(question_wrap);
-						
+
 						let answer_wrap = document.createElement('div');
 						answer_wrap.classList.add('accordion-collapse', 'collapse');
 						Object.entries({
@@ -281,7 +284,7 @@ document.addEventListener('DOMContentLoaded', function () {
 						answer_body.appendChild(answer_p);
 						answer_wrap.appendChild(answer_body);
 						faqItem.appendChild(answer_wrap);
-						
+
 						faqsContainer.appendChild(faqItem);
 					});
 				})
@@ -289,9 +292,9 @@ document.addEventListener('DOMContentLoaded', function () {
 					console.error("Помилка при завантаженні данних: ", error);
 				});
 		}
-		
+
 		fetchFaqsFromAPI();
-		
+
 		function fetchReviewsFromAPI () {
 			fetch('http://clean.webgenerator.com.ua/api/v1/reviews/all')
 				.then(response => response.json())
@@ -300,37 +303,37 @@ document.addEventListener('DOMContentLoaded', function () {
 					data.data.forEach(review => {
 						let reviewItem = document.createElement('li');
 						reviewItem.classList.add('swiper-slide', 'works-reviews-list-item');
-						
+
 						if (review.media) {
 							let images_wrap = document.createElement('div');
 							images_wrap.classList.add('works-reviews-img');
-							
+
 							review.media.slice(0, 2).forEach(src => {
 								let pictureElement = createPictureElement(src);
 								images_wrap.appendChild(pictureElement);
 							});
 							reviewItem.appendChild(images_wrap);
 						}
-						
+
 						let orderName_h3 = document.createElement('h3');
 						orderName_h3.classList.add('text-center', 't-bold', 't-4');
 						orderName_h3.textContent = review.orderName;
-						
+
 						let username_h5 = document.createElement('h5');
 						username_h5.classList.add('text-center', 't-bold', 't-4');
 						username_h5.textContent = review.username;
-						
+
 						let review_p = document.createElement('p');
 						review_p.classList.add('text-center', 't-5');
 						let review_em = document.createElement('em');
 						review_em.textContent = review.review;
 						review_p.appendChild(review_em);
-						
-						
+
+
 						reviewItem.appendChild(orderName_h3);
 						reviewItem.appendChild(username_h5);
 						reviewItem.appendChild(review_p);
-						
+
 						reviewsContainer[0].appendChild(reviewItem);
 					});
 				})
@@ -338,9 +341,9 @@ document.addEventListener('DOMContentLoaded', function () {
 					console.error("Помилка при завантаженні данних: ", error);
 				});
 		}
-		
+
 		fetchReviewsFromAPI();
-		
+
 		function createPictureElement (src) {
 			let picture = document.createElement('picture');
 			let source = document.createElement('source');
@@ -349,11 +352,11 @@ document.addEventListener('DOMContentLoaded', function () {
 				"srcset": src
 			}).forEach(([key, value]) => source.setAttribute(key, value));
 			picture.appendChild(source);
-			
+
 			let img = document.createElement('img');
 			img.setAttribute("src", src);
 			picture.appendChild(img);
-			
+
 			return picture;
 		}
 	})();
