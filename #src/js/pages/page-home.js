@@ -48,6 +48,17 @@
 	btnCalculator.addEventListener('click',(event) => {
 		const calculator = document.querySelector('#root');
 		calculator.classList.toggle('active');
+		const headerHeight = document.querySelector('.header-bg').offsetHeight;
+		const targetOffset = calculator.offsetTop - headerHeight;
+		window.scrollTo({
+			top: targetOffset,
+			behavior: 'smooth', // Добавить плавную прокрутку (по желанию)
+		});
+	});
+	const btnCloseCalculator = document.querySelector('#closeCalculator');
+	btnCloseCalculator.addEventListener('click',(event) => {
+		const calculator = document.querySelector('#root');
+		calculator.classList.remove('active');
 	});
 	const burger = document.querySelector('.burger');
 	burger.addEventListener('click',()=> {

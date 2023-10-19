@@ -346,6 +346,14 @@ input[type='number']::-webkit-inner-spin-button {
   display: block;
 }
 
+#root.active + #rootBtn {
+  display: block;
+}
+
+#root + #rootBtn {
+  display: none;
+}
+
 .btn {
   --bs-btn-border-radius: 10px;
 }

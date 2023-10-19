@@ -23,6 +23,12 @@ input[type='number']::-webkit-inner-spin-button {
 	display: none;
 	&.active {
 		display: block;
+		& + #rootBtn {
+			display: block;
+		}
+	}
+	& + #rootBtn {
+		display: none;
 	}
 }
 .btn {
