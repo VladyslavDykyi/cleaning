@@ -138,9 +138,6 @@
 		margin-bottom: 24px;
 	}
 }
-.calculator-block {
-
-}
 .service-packages {
 	padding-bottom: 100px;
 	@media screen and (max-width: 580px) {
@@ -714,4 +711,7 @@
 			}
 		}
 	}
+}
+.calculator-block {
+	padding-bottom: 0;
 }
