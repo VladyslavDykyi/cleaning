@@ -11,14 +11,14 @@
 
 .first-block {
 	display: flex;
-	padding: 221px 0 121px;
-	margin-bottom: 100px;
+	padding: 140px 0 40px;
+	margin-bottom: 50px;
 	@media screen and (max-width: 1024px) {
-		padding: 168px 0 100px;
+		padding: 88px 0 40px;
 	}
 	@media screen and (max-width: 580px) {
 		flex-direction: column;
-		padding: 168px 0 50px;
+		padding: 120px 0 30px;
 	}
 	&-bg {
 		background-image: url("../../img/bg-1.jpg");
@@ -34,12 +34,12 @@
 		background-size: cover;
 		background-color: #e2e2e2;
 		width: 100%;
-		padding: 33px 60px 144px;
+		padding: 33px 60px 40px;
 		border-radius: 16px;
 		@media screen and (max-width: 768px) {
 			max-width: 420px;
 			margin: 0 auto;
-			padding: 16px 12px 91px;
+			padding: 16px 12px 40px;
 			border-radius: 18px;
 			background-image: url("../../img/bg-2mob.png");
 		}

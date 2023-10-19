@@ -1295,8 +1295,8 @@ li::marker {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 221px 0 121px;
-  margin-bottom: 100px;
+  padding: 140px 0 40px;
+  margin-bottom: 50px;
 }
 
 .first-block-bg {
@@ -1314,7 +1314,7 @@ li::marker {
   background-size: cover;
   background-color: #e2e2e2;
   width: 100%;
-  padding: 33px 60px 144px;
+  padding: 33px 60px 40px;
   -webkit-border-radius: 16px;
           border-radius: 16px;
 }
@@ -2301,7 +2301,7 @@ li::marker {
   }
 
   .first-block {
-    padding: 168px 0 100px;
+    padding: 88px 0 40px;
   }
 
   .service-packages-list-item {
@@ -2486,7 +2486,7 @@ li::marker {
   .first-block-info {
     max-width: 420px;
     margin: 0 auto;
-    padding: 16px 12px 91px;
+    padding: 16px 12px 40px;
     -webkit-border-radius: 18px;
             border-radius: 18px;
     background-image: url("../../img/bg-2mob.png");
@@ -2660,7 +2660,7 @@ li::marker {
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
-    padding: 168px 0 50px;
+    padding: 120px 0 30px;
   }
 
   .service-packages {
