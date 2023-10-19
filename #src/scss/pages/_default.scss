@@ -259,10 +259,10 @@ li::marker {
 }
 .modal-content {
 	--bs-modal-bg: #597B00;
-
 	margin: 0 auto;
 	@media screen and (max-width: 998px) {
 		max-width: 90%;
+		text-align: center;
 	}
 	@media screen and (max-width: 580px) {
 		max-width: 100%;

@@ -665,6 +665,7 @@ li::marker {
 
   .modal-content {
     max-width: 90%;
+    text-align: center;
   }
 
   .left-modal {

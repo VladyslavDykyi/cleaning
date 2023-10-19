@@ -1643,6 +1643,11 @@ li::marker {
           justify-content: center;
 }
 
+.additional-services-btn .btn {
+  font-size: 18px;
+  font-weight: 500;
+}
+
 .additional-services-list {
   list-style-type: none;
   padding-left: 0;
@@ -2344,6 +2349,7 @@ li::marker {
 
   .modal-content {
     max-width: 90%;
+    text-align: center;
   }
 
   .left-modal {
