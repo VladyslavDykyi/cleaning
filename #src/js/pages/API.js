@@ -30,39 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
 						}
 						return response.json();
 					})
-					.then((data) => {
-						(()=> {
-							const wrapper = document.createElement('div');
-							wrapper.classList.add('modal-backdrop','fade','show');
-							const body = document.querySelector('body');
-							body.append(wrapper);
-							const modal = document.querySelector('#exampleModal2');
-							const modal4 = document.querySelector('#exampleModal4');
-							modal4.classList.remove('show');
-							modal4.style.display = "";
-							modal.classList.add('show');
-							modal.style.display = 'block';
-							modal.addEventListener('click', (event) => {
-								if (event.target === modal) {
-									modal.style.display = 'none';
-									modal.classList.remove('show');
-									const wrappers = document.querySelector('.modal-backdrop.fade.show');
-									if (wrappers) {
-										wrappers.remove();
-									}
-								}
-							});
-							const btnModal = document.querySelector('.btn-close');
-							btnModal.addEventListener('click', () => {
-								modal.style.display = 'none';
-								modal.classList.remove('show');
-								const wrappers = document.querySelector('.modal-backdrop.fade.show');
-								if (wrappers) {
-									wrappers.remove();
-								}
-							});
-						})();
-					})
+					.then((data) => {})
 					.catch((error) => {
 						console.error('Произошла ошибка:', error);
 					});
@@ -98,37 +66,6 @@ document.addEventListener('DOMContentLoaded', function () {
 						return response.json();
 					})
 					.then((data) => {
-						(()=> {
-							const wrapper = document.createElement('div');
-							wrapper.classList.add('modal-backdrop','fade','show');
-							const body = document.querySelector('body');
-							body.append(wrapper);
-							const modal = document.querySelector('#exampleModal3');
-							const modal4 = document.querySelector('#exampleModal5');
-							modal4.classList.remove('show');
-							modal4.style.display = "";
-							modal.classList.add('show');
-							modal.style.display = 'block';
-							modal.addEventListener('click', (event) => {
-								if (event.target === modal) {
-									modal.style.display = 'none';
-									modal.classList.remove('show');
-									const wrappers = document.querySelector('.modal-backdrop.fade.show');
-									if (wrappers) {
-										wrappers.remove();
-									}
-								}
-							});
-							const btnModal = document.querySelector('.btn-close');
-							btnModal.addEventListener('click', () => {
-								modal.style.display = 'none';
-								modal.classList.remove('show');
-								const wrappers = document.querySelector('.modal-backdrop.fade.show');
-								if (wrappers) {
-									wrappers.remove();
-								}
-							});
-						})();
 					})
 					.catch((error) => {
 						console.error('Произошла ошибка:', error);
