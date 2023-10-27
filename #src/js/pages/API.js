@@ -78,51 +78,59 @@ document.addEventListener('DOMContentLoaded', function () {
 				.then(response => response.json())
 				.then(data => {
 					const servicePackagesList = document.querySelector('.service-packages-list');
-					data.data.forEach(item => {
+					for (const datum in data.data) {
 						const wrapper = document.createElement('li');
 						wrapper.classList.add('service-packages-list-item');
 						wrapper.innerHTML = `<picture>
-			                <source srcSet="${item.img}" type="image/webp">
-			                <img class="service-packages-img" src="${item.img}" alt="">
-			              </picture>
-			              <h3 class="service-packages-title t-medium t-6">
-			                ${item.name}
-			              </h3>
-			              <h4 class="service-packages-name t-bold t-7">
-			                ${item.room}
-			              </h4>
-			              <ul class="service-packages-dop">
-			                <li class="service-packages-dop-btn">
-			                  <button class="btn-read-full" type="button"></button>
-			                </li>
-			              </ul>
-			                <div class="service-packages-btn-wrapper">
-			                  <button class="btn btn-pink" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal5">
-			                	  Замовити
-			                  </button>
-			                </div>
-			            <div class="service-packages-btn-wrapper">
-			                <button class="btn btn-pinkBig"  type="button">
-			                  Розрахувати
-			                </button>
-			          </div>`;
-						const ul = wrapper.querySelector('.service-packages-dop');
-						item.list_false.forEach(liFalse => {
-							const wrapperLi = document.createElement('li');
-							wrapperLi.classList.add('service-packages-dop-item');
-							wrapperLi.innerHTML = `<i class="bi bi-x-circle-fill"></i>
-                            <span>${liFalse}</span>`;
-							ul.prepend(wrapperLi);
-						})
-						item.list_true.forEach(liTrue => {
-							const wrapperLi = document.createElement('li');
-							wrapperLi.classList.add('service-packages-dop-item');
-							wrapperLi.innerHTML = `<i class="bi bi-check-circle-fill"></i>
-                			<span>${liTrue}</span>`;
-							ul.prepend(wrapperLi);
-						})
+						<source srcSet="${data.data[datum].img}" type="image/webp">
+							<img class="service-packages-img" src="${data.data[datum].img}" alt="">
+						</picture>
+						<h3 class="service-packages-title t-medium t-6">
+							${datum}
+						</h3>
+						<div class="list-wrapper-packaged">
+							<div class="service-packages-dop-btn">
+								<button class="btn-read-full" type="button"></button>
+							</div>
+						</div>
+						<div class="service-packages-btn-wrapper">
+							<button class="btn btn-pink" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal5">
+								Замовити
+							</button>
+						</div>
+						<div class="service-packages-btn-wrapper">
+							<button class="btn btn-pinkBig"  type="button">
+								Розрахувати
+							</button>
+						</div>`;
+						const div = wrapper.querySelector('.list-wrapper-packaged');
+						data.data[datum].text.forEach(item => {
+							const h4 = document.createElement('h4');
+							h4.classList.add('service-packages-name','t-bold','t-7');
+							h4.innerHTML = item.room;
+							const ul = document.createElement('ul');
+							ul.classList.add('service-packages-dop');
+							item.list_false.forEach(liFalse => {
+								const wrapperLi = document.createElement('li');
+								wrapperLi.classList.add('service-packages-dop-item');
+								wrapperLi.innerHTML = `<i class="bi bi-x-circle-fill"></i>
+								<span>${liFalse}</span>`;
+								ul.prepend(wrapperLi);
+							});
+							item.list_true.forEach(liTrue => {
+								const wrapperLi = document.createElement('li');
+								wrapperLi.classList.add('service-packages-dop-item');
+								wrapperLi.innerHTML = `<i class="bi bi-check-circle-fill"></i>
+								<span>${liTrue}</span>`;
+								ul.prepend(wrapperLi);
+							});
+							div.append(
+								item.room ? h4: '',
+								ul);
+
+						});
 						servicePackagesList.append(wrapper);
-					})
+					}
 				})
 				.catch(error => {
 					console.error("Помилка при завантаженні данних: ", error);
@@ -156,23 +164,44 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		fetchPromo();
 
-		function fetchAdditionalFromAPI () {
-			fetch('http://clean.webgenerator.com.ua/api/v1/extra-services/all')
-				.then(response => response.json())
-				.then(data => {
-					const additionalList = document.querySelector('.additional-services-list');
-					data.data.forEach(item => {
-						const wrapper = document.createElement('li');
-						wrapper.classList.add('swiper-slide');
-						wrapper.innerHTML = `<div class="additional-services-list-item">
-                            <picture>
-                                <source srcSet="${item.svg}" type="image/webp">
-                                <img src="${item.svg}" alt="${item.text}">
-                            </picture>
+		function fetchAdditionalFromAPI() {
+			const additionalList = document.querySelector('.additional-services-list');
+			const arr = [];
+
+			// Создаем функцию для загрузки данных и создания элементов
+			function loadDataAndCreateElements(url) {
+				return fetch(url)
+					.then(response => response.json())
+					.then(data => {
+						data.data.forEach(item => {
+							const wrapper = document.createElement('li');
+							wrapper.classList.add('swiper-slide');
+							wrapper.innerHTML = `<div class="additional-services-list-item">
+                        <picture>
+                            <source srcSet="${item.svg}" type="image/webp">
+                            <img src="${item.svg}" alt="${item.text}">
+                        </picture>
                         <h5 class="t-s-bold t-6">${item.text}</h5>
-                        <p class=" t-bold t-3">${item.price} ${item.currency}</p>
+                        <p class="t-bold t-3">${item.price} ${item.currency}</p>
                     </div>`;
-						additionalList.append(wrapper);
+							arr.push(wrapper);
+						});
+					})
+					.catch(error => {
+						console.error("Помилка при завантаженні данних: ", error);
+					});
+			}
+
+			// Загрузка данных и создание элементов для каждого запроса
+			Promise.all([
+				loadDataAndCreateElements('http://clean.webgenerator.com.ua/api/v1/extra-services/all'),
+				loadDataAndCreateElements('http://clean.webgenerator.com.ua/api/v1/dry-clean-sofa-carpets/all'),
+				loadDataAndCreateElements('http://clean.webgenerator.com.ua/api/v1/laundry-services/all')
+			])
+				.then(() => {
+					// Все данные успешно загружены, добавляем элементы в список
+					arr.forEach(item => {
+						additionalList.appendChild(item);
 					});
 				})
 				.catch(error => {

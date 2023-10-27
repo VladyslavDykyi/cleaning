@@ -1471,8 +1471,14 @@ li::marker {
           box-shadow: 0 0 8px 0 #D7D7D7;
 }
 
-.service-packages-list-item.active {
-  height: 100%;
+.service-packages-list-item.active .list-wrapper-packaged {
+  max-height: 100%;
+}
+
+.service-packages-list-item.active .service-packages-dop-btn .btn-read-full:before {
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 .service-packages-img {
@@ -1494,25 +1500,18 @@ li::marker {
   text-align: center;
 }
 
+.service-packages .list-wrapper-packaged {
+  position: relative;
+  max-height: 270px;
+  overflow: hidden;
+}
+
 .service-packages-dop {
   margin-top: 12px;
   margin-bottom: 24px;
   list-style-type: none;
   padding-left: 0;
   position: relative;
-}
-
-.service-packages-dop.active .service-packages-dop-item:nth-child(n + 6) {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.service-packages-dop.active .service-packages-dop-btn .btn-read-full:before {
-  -webkit-transform: rotate(180deg);
-      -ms-transform: rotate(180deg);
-          transform: rotate(180deg);
 }
 
 .service-packages-dop-item {
@@ -1528,10 +1527,6 @@ li::marker {
   grid-gap: 8px;
 }
 
-.service-packages-dop-item:nth-child(n + 6) {
-  display: none;
-}
-
 .service-packages-dop-item .bi-check-circle-fill {
   color: #83B100;
 }
@@ -1544,6 +1539,7 @@ li::marker {
   position: absolute;
   bottom: 0;
   right: 0;
+  z-index: 100;
 }
 
 .service-packages-dop-btn .btn-read-full {

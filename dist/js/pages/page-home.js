@@ -39,11 +39,6 @@
 		},
 	});
 
-	const list = document.querySelector('.service-packages-list');
-	list.addEventListener('click',e => {
-		if (!e.target.classList.contains('btn-read-full')) return
-		const item = e.target.closest('.service-packages-dop').classList.toggle('active');
-	});
 	const btnCalculator = document.querySelector('#calculBtn');
 	btnCalculator.addEventListener('click',(event) => {
 		const calculator = document.querySelector('#root');
@@ -115,5 +110,10 @@
 					behavior: 'smooth',
 				});
 			});
+	});
+	const div = document.querySelector('.service-packages-list');
+	div.addEventListener('click',e => {
+		if (!e.target.classList.contains('btn-read-full')) return
+		const item = e.target.closest('.service-packages-list-item').classList.toggle('active');
 	});
 })();
