@@ -354,8 +354,13 @@
 
 			& > h5 {
 				margin-top: 15px;
+				line-height: 100%;
 				margin-bottom: 0;
 				flex-grow: 2;
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+				overflow: hidden;
+				-webkit-line-clamp: 2;
 				@media screen and (max-width: 640px) {
 					margin-top: 4px;
 					font-size: 14px;

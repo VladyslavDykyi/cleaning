@@ -1688,11 +1688,16 @@ li::marker {
 
 .additional-services-list-item > h5 {
   margin-top: 15px;
+  line-height: 100%;
   margin-bottom: 0;
   -webkit-box-flex: 2;
   -webkit-flex-grow: 2;
       -ms-flex-positive: 2;
           flex-grow: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
 }
 
 .additional-services-list-item > p {

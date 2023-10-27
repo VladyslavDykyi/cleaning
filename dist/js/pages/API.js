@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             <source srcSet="${item.svg}" type="image/webp">
                             <img src="${item.svg}" alt="${item.text}">
                         </picture>
-                        <h5 class="t-s-bold t-6">${item.text}</h5>
+                        <h5 class="t-s-bold t-6" title="${item.text}">${item.text}</h5>
                         <p class="t-bold t-3">${item.price} ${item.currency}</p>
                     </div>`;
 							arr.push(wrapper);
