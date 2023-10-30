@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	// Функция для получения данных из Laravel API
 	(() => {
 		function fetchCallBackTeam() {
-			const backendUrl = 'http://clean.webgenerator.com.ua/api/v1/job_applicant_callback'; // Замените на реальный URL вашего бекенда
+			const backendUrl = 'https://green-gloves.com.ua/api/v1/job_applicant_callback'; // Замените на реальный URL вашего бекенда
 			const btn = document.querySelector('#exampleModal4 .btn.btn-xxl.btn-orange');
 			// Выполните запрос с использованием fetch
 			btn.addEventListener('click',() => {
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 		fetchCallBackTeam();
 		function fetchCallBackCall() {
-			const backendUrl = 'http://clean.webgenerator.com.ua/api/v1/customer_callback'; // Замените на реальный URL вашего бекенда
+			const backendUrl = 'https://green-gloves.com.ua/api/v1/customer_callback'; // Замените на реальный URL вашего бекенда
 			const btn = document.querySelector('#exampleModal5 .btn.btn-xxl.btn-orange');
 			// Выполните запрос с использованием fetch
 			btn.addEventListener('click',() => {
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 		fetchCallBackCall()
 		function fetchServicePackagesAPI3 () {
-			fetch('http://clean.webgenerator.com.ua/api/v1/service-packages/all')
+			fetch('https://green-gloves.com.ua/api/v1/service-packages/all')
 				.then(response => response.json())
 				.then(data => {
 					const servicePackagesList = document.querySelector('.service-packages-list');
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 		fetchServicePackagesAPI3();
 		function fetchPromo() {
-			fetch('http://clean.webgenerator.com.ua/api/v1/promo_offers/all')
+			fetch('https://green-gloves.com.ua/api/v1/promo_offers/all')
 				.then(response => response.json())
 				.then(data => {
 					const servicePackagesList = document.querySelector('.promo-list');
@@ -194,9 +194,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 			// Загрузка данных и создание элементов для каждого запроса
 			Promise.all([
-				loadDataAndCreateElements('http://clean.webgenerator.com.ua/api/v1/extra-services/all'),
-				loadDataAndCreateElements('http://clean.webgenerator.com.ua/api/v1/dry-clean-sofa-carpets/all'),
-				loadDataAndCreateElements('http://clean.webgenerator.com.ua/api/v1/laundry-services/all')
+				loadDataAndCreateElements('https://green-gloves.com.ua/api/v1/extra-services/all'),
+				loadDataAndCreateElements('https://green-gloves.com.ua/api/v1/dry-clean-sofa-carpets/all'),
+				loadDataAndCreateElements('https://green-gloves.com.ua/api/v1/laundry-services/all')
 			])
 				.then(() => {
 					// Все данные успешно загружены, добавляем элементы в список
@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		fetchAdditionalFromAPI();
 
 		function fetchFaqsFromAPI () {
-			fetch('http://clean.webgenerator.com.ua/api/v1/faqs/all')
+			fetch('https://green-gloves.com.ua/api/v1/faqs/all')
 				.then(response => response.json())
 				.then(data => {
 					let faqsContainer = document.getElementById('accordionFlushExample');
@@ -262,7 +262,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		fetchFaqsFromAPI();
 
 		function fetchReviewsFromAPI () {
-			fetch('http://clean.webgenerator.com.ua/api/v1/reviews/all')
+			fetch('https://green-gloves.com.ua/api/v1/reviews/all')
 				.then(response => response.json())
 				.then(data => {
 					let reviewsContainer = document.querySelectorAll('.mySwiper1 ul');
